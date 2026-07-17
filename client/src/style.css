@@ -460,51 +460,66 @@ a {
   transform: scale(1.04);
 }
 
+.project-card__img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.project-card--stitch .project-card__img {
+  object-position: center 12%;
+}
+
+.project-card--tavolina .project-card__img {
+  object-position: center center;
+}
+
+.project-card--autorent .project-card__img {
+  object-position: center 18%;
+}
+
 .project-card__visual::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, 0.78) 100%);
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.45) 42%,
+    rgba(0, 0, 0, 0.88) 100%
+  );
   transition: opacity 0.7s var(--ease-soft);
 }
 
 .project-card:hover .project-card__visual::after {
-  opacity: 0.92;
+  opacity: 0.95;
 }
 
 .project-card--stitch .project-card__visual {
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255, 214, 170, 0.35), transparent 45%),
-    linear-gradient(145deg, #3d2b1f 0%, #8b5a2b 45%, #e67e22 100%);
+  background: linear-gradient(145deg, #3d2b1f 0%, #8b5a2b 45%, #e67e22 100%);
 }
 
 .project-card--tavolina .project-card__visual {
-  background:
-    radial-gradient(circle at 80% 10%, rgba(255, 200, 120, 0.25), transparent 40%),
-    linear-gradient(160deg, #1a1410 0%, #4a2c1a 50%, #c45c26 100%);
+  background: linear-gradient(160deg, #1a1410 0%, #4a2c1a 50%, #c45c26 100%);
 }
 
 .project-card--autorent .project-card__visual {
-  background:
-    radial-gradient(circle at 30% 80%, rgba(120, 180, 255, 0.2), transparent 45%),
-    linear-gradient(150deg, #0f1419 0%, #1e2a36 50%, #3d5a73 100%);
+  background: linear-gradient(150deg, #0f1419 0%, #1e2a36 50%, #3d5a73 100%);
 }
 
 .project-card__pattern {
-  position: absolute;
-  inset: 0;
-  opacity: 0.18;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px);
-  background-size: 36px 36px;
-  transform: scale(1.02);
-  transition: transform 1.1s var(--ease-soft), opacity 0.9s var(--ease-soft);
+  display: none;
 }
 
-.project-card:hover .project-card__pattern {
-  transform: scale(1.1);
-  opacity: 0.26;
+.project-card > :not(.project-card__visual) {
+  position: relative;
+  z-index: 1;
 }
 
 .project-card__tag {
@@ -613,18 +628,24 @@ a {
 
 .portfolio-item__media {
   position: relative;
-  min-height: 280px;
+  min-height: clamp(220px, 48vw, 360px);
   border-radius: var(--radius);
   overflow: hidden;
+  isolation: isolate;
 }
 
 .portfolio-item__media .project-card__visual {
   position: absolute;
   inset: 0;
+  transform: none;
 }
 
 .portfolio-item__media .project-card__visual::after {
-  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.35) 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(0, 0, 0, 0.28) 100%
+  );
 }
 
 .portfolio-item__body h2 {
@@ -1548,11 +1569,34 @@ a {
 
   .project-card,
   .project-card--featured {
-    min-height: 300px;
+    min-height: min(58vw, 340px);
+    padding: 1.35rem 1.2rem;
+  }
+
+  .project-card--featured {
+    min-height: min(72vw, 420px);
+  }
+
+  .project-card__title {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
   }
 
   .project-card__desc {
     max-width: none;
+    font-size: 0.92rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .project-card--stitch .project-card__img {
+    object-position: center 8%;
+  }
+
+  .project-card--autorent .project-card__img {
+    object-position: center 10%;
+  }
+
+  .portfolio-item__media {
+    min-height: min(56vw, 280px);
   }
 
   .service-row {
@@ -1650,6 +1694,24 @@ a {
 @media (max-width: 575.98px) {
   .hero-brand {
     font-size: clamp(1.7rem, 7.8vw, 2.15rem);
+  }
+
+  .project-card,
+  .project-card--featured {
+    min-height: 260px;
+  }
+
+  .project-card--featured {
+    min-height: 320px;
+  }
+
+  .project-card__meta {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .project-card__meta span {
+    font-size: 0.72rem;
   }
 
   .site-nav .brand-mark {

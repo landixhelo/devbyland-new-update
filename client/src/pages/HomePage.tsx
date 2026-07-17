@@ -55,7 +55,13 @@ export function HomePage() {
               to="/projects#stitch-bear"
             >
               <div className="project-card__visual">
-                <div className="project-card__pattern" />
+                <img
+                  className="project-card__img"
+                  src="/img/projects/stitch-bear.png"
+                  alt="Stitch Bear e-commerce"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <span className="project-card__tag">E-commerce</span>
               <h3 className="project-card__title">Stitch Bear</h3>
@@ -75,7 +81,13 @@ export function HomePage() {
               to="/projects#tavolina"
             >
               <div className="project-card__visual">
-                <div className="project-card__pattern" />
+                <img
+                  className="project-card__img"
+                  src="/img/projects/tavolina.png"
+                  alt="Tavolina rezervime"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <span className="project-card__tag">Bar & Restorant</span>
               <h3 className="project-card__title">Tavolina</h3>
@@ -94,7 +106,13 @@ export function HomePage() {
               to="/projects#rental-car"
             >
               <div className="project-card__visual">
-                <div className="project-card__pattern" />
+                <img
+                  className="project-card__img"
+                  src="/img/projects/autorent.png"
+                  alt="AutoRent flota"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <span className="project-card__tag">Rental</span>
               <h3 className="project-card__title">AutoRent</h3>

@@ -49,7 +49,13 @@ export function ProjectsPage() {
             <article className="portfolio-item reveal" id="stitch-bear">
               <div className="portfolio-item__media project-card--stitch">
                 <div className="project-card__visual">
-                  <div className="project-card__pattern" />
+                  <img
+                    className="project-card__img"
+                    src="/img/projects/stitch-bear.png"
+                    alt="Stitch Bear e-commerce"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </div>
               <div className="portfolio-item__body">
@@ -79,7 +85,13 @@ export function ProjectsPage() {
             <article className="portfolio-item reveal" id="tavolina">
               <div className="portfolio-item__media project-card--tavolina">
                 <div className="project-card__visual">
-                  <div className="project-card__pattern" />
+                  <img
+                    className="project-card__img"
+                    src="/img/projects/tavolina.png"
+                    alt="Tavolina rezervime"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </div>
               <div className="portfolio-item__body">
@@ -109,7 +121,13 @@ export function ProjectsPage() {
             <article className="portfolio-item reveal" id="rental-car">
               <div className="portfolio-item__media project-card--autorent">
                 <div className="project-card__visual">
-                  <div className="project-card__pattern" />
+                  <img
+                    className="project-card__img"
+                    src="/img/projects/autorent.png"
+                    alt="AutoRent flota"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </div>
               <div className="portfolio-item__body">
