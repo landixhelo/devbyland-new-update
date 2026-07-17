@@ -1063,6 +1063,43 @@ a {
   font-size: 0.98rem;
 }
 
+#process {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 214, 170, 0.35), transparent 45%),
+    linear-gradient(145deg, #3d2b1f 0%, #8b5a2b 45%, #e67e22 100%);
+  color: var(--white);
+}
+
+#process::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.18;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+#process::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+#process > .container {
+  position: relative;
+  z-index: 1;
+}
+
 .process-track {
   display: grid;
   gap: 0;
