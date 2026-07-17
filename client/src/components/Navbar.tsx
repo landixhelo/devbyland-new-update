@@ -80,16 +80,7 @@ export function Navbar({ variant = "inner" }: Props) {
                 Kontakt
               </NavLink>
             </li>
-            <li className="nav-item d-none d-lg-block">
-              <a
-                className="nav-link"
-                href={SITE.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp
-              </a>
-            </li>
+           
             <li className="nav-item">
               <Link className="nav-cta" to="/contact">
                 Fillo projektin
