@@ -3,6 +3,7 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { CtaBand } from "../components/CtaBand";
 import { Seo } from "../components/Seo";
+import { TECH_STACK } from "../components/TechStack";
 import { useReveal } from "../hooks/useReveal";
 
 const services = [
@@ -424,20 +425,10 @@ export function HomePage() {
             </p>
           </div>
           <div className="tech-marquee reveal">
-            {[
-              "React",
-              "Next.js",
-              "TypeScript",
-              "Node.js",
-              "Express",
-              "PostgreSQL",
-              "Prisma",
-              "Figma",
-              "SEO",
-              "Vercel",
-            ].map((tech) => (
-              <span className="tech-chip" key={tech}>
-                {tech}
+            {TECH_STACK.map((tech) => (
+              <span className="tech-chip" key={tech.name}>
+                {tech.icon}
+                {tech.name}
               </span>
             ))}
           </div>
