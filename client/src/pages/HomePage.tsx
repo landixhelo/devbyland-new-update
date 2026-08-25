@@ -5,6 +5,82 @@ import { CtaBand } from "../components/CtaBand";
 import { Seo } from "../components/Seo";
 import { useReveal } from "../hooks/useReveal";
 
+const services = [
+  {
+    title: "Web Development",
+    text: "Website, e-commerce dhe aplikacione me React e Node — të shpejta, të sigurta dhe të gatshme për rritje.",
+  },
+  {
+    title: "UX / UI Design",
+    text: "Ndërfaqe të qarta që përdoruesit i kuptojnë menjëherë — më pak fërkim, më shumë konvertime.",
+  },
+  {
+    title: "E-commerce",
+    text: "Dyqane online me katalog, checkout dhe admin — të ndërtuara për shitje reale, jo vetëm pamje.",
+  },
+  {
+    title: "SEO & Performance",
+    text: "Optimizim për Google dhe shpejtësi ngarkimi, që biznesi yt të gjendet dhe të shitet më mirë.",
+  },
+  {
+    title: "Sisteme custom",
+    text: "Rezervime, rental, dashboard dhe paneli admin — logjikë biznesi e personalizuar.",
+  },
+  {
+    title: "Mirëmbajtje",
+    text: "Përditësime, siguri dhe mbështetje e vazhdueshme pas lansimit — pa surpriza.",
+  },
+];
+
+const industries = [
+  "E-commerce",
+  "Hospitality",
+  "Rental",
+  "Retail",
+  "Shërbime",
+  "Startups",
+];
+
+const values = [
+  {
+    title: "Fokus te rezultati",
+    text: "Çdo faqe ka një qëllim të qartë: kontakt, shitje ose rezervim.",
+  },
+  {
+    title: "Pronësi e projektit",
+    text: "E trajtojmë produktin tënd si tonin — me kujdes te detaji dhe afatet.",
+  },
+  {
+    title: "Komunikim 1:1",
+    text: "Feedback i shpejtë, pa zinxhirë të gjatë. Ti flet me atë që ndërton.",
+  },
+  {
+    title: "Stack modern",
+    text: "Teknologji që mbajnë shpejtësi dhe hapësirë për zgjerim të mëvonshëm.",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Faqja e re duket profesionale dhe klientët rezervojnë më lehtë. Procesi ishte i qartë nga fillimi deri te lansimi.",
+    name: "Klient hospitality",
+    role: "Tavolina",
+  },
+  {
+    quote:
+      "Na duhej një platformë qiraje që të funksiononte në telefon. AutoRent na e dha — e pastër dhe e shpejtë.",
+    name: "Klient rental",
+    role: "AutoRent",
+  },
+  {
+    quote:
+      "Nga ideja te dyqani online, gjithçka u ndërtua me fokus te shitjet. Rekomandojmë DevByLand.",
+    name: "Klient e-commerce",
+    role: "Stitch Bear",
+  },
+];
+
 export function HomePage() {
   useReveal();
 
@@ -32,6 +108,90 @@ export function HomePage() {
           </div>
         </div>
       </header>
+
+      <section className="trust-strip" aria-label="Fokusi ynë">
+        <div className="container trust-strip__inner">
+          <span>Stitch Bear</span>
+          <span>Tavolina</span>
+          <span>AutoRent</span>
+          <span>E-commerce</span>
+          <span>Hospitality</span>
+          <span>Rental</span>
+        </div>
+      </section>
+
+      <section className="section" id="services">
+        <div className="container">
+          <div className="section-head reveal">
+            <p className="section-label">Çfarë ndërtojmë</p>
+            <h2 className="section-title">Gjithçka që të duhet për prani serioze online</h2>
+            <p className="section-text">
+              Nga ideja te lansimi — dizajn, kod dhe optimizim që sjellin
+              klientë.
+            </p>
+          </div>
+          <div className="service-cards">
+            {services.map((item, i) => (
+              <article
+                className={`service-card reveal${i ? ` reveal-delay-${Math.min(i, 3)}` : ""}`}
+                key={item.title}
+              >
+                <span className="service-card__num">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="section-actions reveal">
+            <Link className="btn-brand" to="/contact">
+              Shiko shërbimet
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="mid-cta">
+        <div className="container mid-cta__inner reveal">
+          <div>
+            <h2>Gati për një faqe që punon për biznesin tënd?</h2>
+            <p>Konsultë e shkurtër — pa obligim. Të tregojmë hapin e parë.</p>
+          </div>
+          <Link className="btn-brand" to="/contact">
+            Konsultë falas
+          </Link>
+        </div>
+      </section>
+
+      <section className="section section--paper-deep" id="stats">
+        <div className="container">
+          <div className="section-head reveal">
+            <p className="section-label">Rezultatet</p>
+            <h2 className="section-title">
+              Nuk flasim vetëm — <em>dorëzojmë</em>
+            </h2>
+          </div>
+          <div className="stats-grid reveal">
+            <div className="stats-item">
+              <strong>3+</strong>
+              <p>produkte digjitale në portfolio aktiv</p>
+            </div>
+            <div className="stats-item">
+              <strong>100%</strong>
+              <p>fokus te mobile dhe performancë</p>
+            </div>
+            <div className="stats-item">
+              <strong>1:1</strong>
+              <p>komunikim direkt gjatë projektit</p>
+            </div>
+            <div className="stats-item">
+              <strong>4</strong>
+              <p>hapa të qartë deri te lansimi</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="section" id="projects">
         <div className="container">
@@ -129,84 +289,119 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section section--paper-deep" id="audience">
+      <section className="section section--paper-deep" id="values">
         <div className="container">
           <div className="section-head reveal">
-            <p className="section-label">Për kë punojmë</p>
-            <h2 className="section-title">Biznese që duan prani serioze online</h2>
+            <p className="section-label">Si kujdesemi</p>
+            <h2 className="section-title">
+              Projektin tënd e trajtojmë si tonin
+            </h2>
+            <p className="section-text">
+              Studio e vogël, fokus i madh — cilësi, afate dhe komunikim i
+              hapur.
+            </p>
+          </div>
+          <div className="value-cards">
+            {values.map((item, i) => (
+              <article
+                className={`value-card reveal${i ? ` reveal-delay-${Math.min(i, 3)}` : ""}`}
+                key={item.title}
+              >
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="industries">
+        <div className="container">
+          <div className="section-head reveal">
+            <p className="section-label">Industritë</p>
+            <h2 className="section-title">Përvojë në sektore të ndryshme</h2>
             <p className="section-text">
               Ndihmojmë marka lokale të shesin, rezervojnë dhe komunikojnë më
               mirë digjitalisht.
             </p>
           </div>
-          <div className="audience-grid">
-            <div className="audience-item reveal">
-              <h3>E-commerce & dyqane</h3>
-              <p>
-                Katalog, checkout dhe admin — që shitjet online të jenë të
-                thjeshta dhe të besueshme.
-              </p>
-            </div>
-            <div className="audience-item reveal reveal-delay-1">
-              <h3>Bar, restorant & hospitality</h3>
-              <p>
-                Menu digjitale, porosi dhe sisteme që lehtësojnë punën e stafit
-                çdo ditë.
-              </p>
-            </div>
-            <div className="audience-item reveal reveal-delay-2">
-              <h3>Shërbime & rental</h3>
-              <p>
-                Rezervime, paneli admin dhe faqe që kthejnë vizitorët në klientë.
-              </p>
-            </div>
+          <div className="industry-grid reveal">
+            {industries.map((name) => (
+              <div className="industry-chip" key={name}>
+                {name}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section" id="services">
+      <section className="section section--ink" id="showcase">
         <div className="container">
           <div className="section-head reveal">
-            <p className="section-label">Çfarë bëjmë</p>
-            <h2 className="section-title">Shërbime që ngrenë biznesin</h2>
+            <p className="section-label">Dallimi</p>
+            <h2 className="section-title">Shiko ndryshimin që bëjmë</h2>
             <p className="section-text">
-              Nga ideja te lansimi — dizajn, kod dhe optimizim që sjellin
-              klientë.
+              Nga ideja te produkti live — UI i pastër, i shpejtë dhe i
+              përshtatur për mobile.
             </p>
           </div>
-          <div className="service-list">
-            <div className="service-row reveal">
-              <span className="service-row__num">01</span>
-              <h3 className="service-row__title">Web Development</h3>
-              <p className="service-row__text">
-                Website, e-commerce dhe aplikacione me React, Node dhe stack
-                modern — të shpejta, të sigurta dhe të gatshme për rritje.
-              </p>
-            </div>
-            <div className="service-row reveal reveal-delay-1">
-              <span className="service-row__num">02</span>
-              <h3 className="service-row__title">UX / UI Design</h3>
-              <p className="service-row__text">
-                Ndërfaqe të qarta që përdoruesit i kuptojnë menjëherë — më pak
-                fërkim, më shumë konvertime.
-              </p>
-            </div>
-            <div className="service-row reveal reveal-delay-2">
-              <span className="service-row__num">03</span>
-              <h3 className="service-row__title">SEO & Performance</h3>
-              <p className="service-row__text">
-                Optimizim për Google dhe shpejtësi ngarkimi, që biznesi yt të
-                gjendet dhe të shitet më mirë.
-              </p>
-            </div>
-            <div className="service-row reveal reveal-delay-3">
-              <span className="service-row__num">04</span>
-              <h3 className="service-row__title">Mirëmbajtje</h3>
-              <p className="service-row__text">
-                Përditësime, siguri dhe mbështetje e vazhdueshme pas lansimit —
-                pa surpriza.
-              </p>
-            </div>
+          <div className="showcase-grid">
+            <Link
+              className="showcase-card reveal"
+              to="/projects#tavolina"
+            >
+              <img
+                src="/img/projects/tavolina.png"
+                alt="Tavolina UI"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="showcase-card__caption">
+                <span>Tavolina</span>
+                <strong>Rezervime & operacione</strong>
+              </div>
+            </Link>
+            <Link
+              className="showcase-card reveal reveal-delay-1"
+              to="/projects#rental-car"
+            >
+              <img
+                src="/img/projects/autorent.png"
+                alt="AutoRent UI"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="showcase-card__caption">
+                <span>AutoRent</span>
+                <strong>Flota & rezervime</strong>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="testimonials">
+        <div className="container">
+          <div className="section-head reveal">
+            <p className="section-label">Klientët</p>
+            <h2 className="section-title">Çfarë thonë për punën tonë</h2>
+          </div>
+          <div className="testimonial-grid">
+            {testimonials.map((item, i) => (
+              <blockquote
+                className={`testimonial-card reveal${i ? ` reveal-delay-${Math.min(i, 3)}` : ""}`}
+                key={item.role}
+              >
+                <div className="testimonial-card__stars" aria-hidden="true">
+                  ★★★★★
+                </div>
+                <p>“{item.quote}”</p>
+                <footer>
+                  <strong>{item.name}</strong>
+                  <span>{item.role}</span>
+                </footer>
+              </blockquote>
+            ))}
           </div>
         </div>
       </section>
@@ -286,58 +481,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section" id="about">
-        <div className="container">
-          <div className="about-strip">
-            <div className="about-strip__visual reveal" aria-hidden="true" />
-            <div className="reveal reveal-delay-1">
-              <p className="section-label">Kush jemi</p>
-              <h2 className="section-title">Studio e vogël, ndikim i madh</h2>
-              <p className="section-text">
-                DevByLand është studio krijuese në Shqipëri. Ndërtojmë produkte
-                digjitale që duken mirë dhe punojnë edhe më mirë — për marka
-                lokale që duan prani serioze online.
-              </p>
-              <div className="about-points">
-                <div className="about-point">
-                  <h3>Fokus te rezultati</h3>
-                  <p>Çdo faqe ka një qëllim: kontakt, shitje ose rezervim.</p>
-                </div>
-                <div className="about-point">
-                  <h3>Proces i qartë</h3>
-                  <p>
-                    Briefing → dizajn → build → lansim — me komunikim të
-                    vazhdueshëm.
-                  </p>
-                </div>
-                <div className="about-point">
-                  <h3>Stack modern</h3>
-                  <p>
-                    Teknologji që mbajnë shpejtësi dhe janë të lehta për t’u
-                    zgjeruar.
-                  </p>
-                </div>
-              </div>
-              <div className="results-strip reveal" style={{ marginTop: "2rem" }}>
-                <div>
-                  <strong>3+</strong>
-                  <p>produkte digjitale në portfolio aktiv</p>
-                </div>
-                <div>
-                  <strong>100%</strong>
-                  <p>fokus te mobile dhe performancë</p>
-                </div>
-                <div>
-                  <strong>1:1</strong>
-                  <p>komunikim direkt gjatë gjithë projektit</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--paper-deep" id="packages">
+      <section className="section" id="packages">
         <div className="container">
           <div className="section-head row-between reveal">
             <div>
@@ -405,7 +549,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section" id="faq">
+      <section className="section section--paper-deep" id="faq">
         <div className="container">
           <div className="section-head reveal">
             <p className="section-label">FAQ</p>
