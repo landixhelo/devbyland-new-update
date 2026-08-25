@@ -325,57 +325,20 @@ export function HomePage() {
               mirë digjitalisht.
             </p>
           </div>
-          <div className="industry-grid reveal">
-            {industries.map((name) => (
-              <div className="industry-chip" key={name}>
-                {name}
+          <div className="industry-grid">
+            {industries.map((name, i) => (
+              <div
+                className={`industry-chip reveal reveal-delay-${(i % 3) + 1}`}
+                key={name}
+                style={{ ["--i" as string]: String(i) }}
+              >
+                <span className="industry-chip__index">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <strong>{name}</strong>
+                <span className="industry-chip__glow" aria-hidden="true" />
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--ink" id="showcase">
-        <div className="container">
-          <div className="section-head reveal">
-            <p className="section-label">Dallimi</p>
-            <h2 className="section-title">Shiko ndryshimin që bëjmë</h2>
-            <p className="section-text">
-              Nga ideja te produkti live — UI i pastër, i shpejtë dhe i
-              përshtatur për mobile.
-            </p>
-          </div>
-          <div className="showcase-grid">
-            <Link
-              className="showcase-card reveal"
-              to="/projects#tavolina"
-            >
-              <img
-                src="/img/projects/tavolina.png"
-                alt="Tavolina UI"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="showcase-card__caption">
-                <span>Tavolina</span>
-                <strong>Rezervime & operacione</strong>
-              </div>
-            </Link>
-            <Link
-              className="showcase-card reveal reveal-delay-1"
-              to="/projects#rental-car"
-            >
-              <img
-                src="/img/projects/autorent.png"
-                alt="AutoRent UI"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="showcase-card__caption">
-                <span>AutoRent</span>
-                <strong>Flota & rezervime</strong>
-              </div>
-            </Link>
           </div>
         </div>
       </section>
