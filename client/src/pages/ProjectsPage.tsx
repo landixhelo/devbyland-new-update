@@ -5,6 +5,7 @@ import { Footer } from "../components/Footer";
 import { CtaBand } from "../components/CtaBand";
 import { Seo } from "../components/Seo";
 import { useReveal } from "../hooks/useReveal";
+import { SITE } from "../lib/site";
 
 const tagStyle = {
   borderColor: "var(--line)",
@@ -27,9 +28,10 @@ export function ProjectsPage() {
   return (
     <>
       <Seo
-        title="Projekte"
-        description="Portfolio DevByLand — Stitch Bear e-commerce, Tavolina bar-restorant dhe AutoRent platformë qiraje makinash."
+        title="Projekte | Website & E-commerce në Shqipëri"
+        description="Portfolio DevByLand: Stitch Bear e-commerce, Tavolina bar-restorant dhe AutoRent — projekte web reale në Shqipëri."
         path="/projects"
+        keywords={`portfolio web Shqipëri, projekte e-commerce, ${SITE.keywords}`}
       />
       <Navbar />
       <header className="page-hero">

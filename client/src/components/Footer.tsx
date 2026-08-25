@@ -17,7 +17,8 @@ export function Footer({ showExtraLinks = false }: Props) {
               DevBy<span>Land</span>
             </p>
             <p>
-              Web development & SEO për biznese që duan të rriten digjitalisht.
+              Krijim website, e-commerce, UX/UI dhe SEO për biznese në Tiranë dhe
+              Shqipëri.
             </p>
           </div>
           <div>
@@ -27,10 +28,10 @@ export function Footer({ showExtraLinks = false }: Props) {
                 <Link to="/">Kreu</Link>
               </li>
               <li>
-                <Link to="/projects">Projekte</Link>
+                <Link to="/services">Shërbimet</Link>
               </li>
               <li>
-                <Link to="/#services">Shërbimet</Link>
+                <Link to="/projects">Projekte</Link>
               </li>
               {showExtraLinks && (
                 <>
@@ -47,6 +48,23 @@ export function Footer({ showExtraLinks = false }: Props) {
               )}
               <li>
                 <Link to="/contact">Kontakt</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>Shërbimet</h4>
+            <ul>
+              <li>
+                <Link to="/services/web-development">Krijim website</Link>
+              </li>
+              <li>
+                <Link to="/services/ecommerce">E-commerce</Link>
+              </li>
+              <li>
+                <Link to="/services/ux-ui">UX / UI</Link>
+              </li>
+              <li>
+                <Link to="/services/seo">SEO</Link>
               </li>
             </ul>
           </div>

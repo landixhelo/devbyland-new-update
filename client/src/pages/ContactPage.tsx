@@ -78,9 +78,10 @@ export function ContactPage() {
   return (
     <>
       <Seo
-        title="Kontakt"
-        description="Kontakto DevByLand për website, e-commerce, UX/UI dhe SEO. Email: devbyland@gmail.com · WhatsApp: +355 68 900 1257."
+        title="Kontakt | Krijim Website & SEO Tiranë"
+        description="Kontakto DevByLand në Tiranë për krijim website, e-commerce, UX/UI dhe SEO. Email: devbyland@gmail.com · WhatsApp: +355 68 900 1257."
         path="/contact"
+        keywords={`kontakt DevByLand, ofertë website Tiranë, ${SITE.keywords}`}
       />
       <Navbar />
       <header className="page-hero">

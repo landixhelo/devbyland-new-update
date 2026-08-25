@@ -7,6 +7,9 @@ type Props = {
   path?: string;
   image?: string;
   noindex?: boolean;
+  keywords?: string;
+  type?: "website" | "article" | "profile";
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 };
 
 export function Seo({
@@ -15,38 +18,71 @@ export function Seo({
   path = "/",
   image = SITE.ogImage,
   noindex = false,
+  keywords = SITE.keywords,
+  type = "website",
+  jsonLd,
 }: Props) {
   const fullTitle = title
-    ? `${title} | ${SITE.name}`
+    ? title.includes(SITE.name)
+      ? title
+      : `${title} | ${SITE.name}`
     : SITE.defaultTitle;
   const url = `${SITE.url}${path === "/" ? "/" : path}`;
+  const absImage = image.startsWith("http") ? image : `${SITE.url}${image}`;
+
+  const graphs = jsonLd
+    ? Array.isArray(jsonLd)
+      ? jsonLd
+      : [jsonLd]
+    : [];
 
   return (
     <Helmet>
       <html lang="sq" />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
       <meta
         name="robots"
-        content={noindex ? "noindex, nofollow" : "index, follow"}
+        content={
+          noindex
+            ? "noindex, nofollow"
+            : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
       />
+      <meta name="googlebot" content="index, follow" />
       <link rel="canonical" href={url} />
 
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={type} />
       <meta property="og:site_name" content={SITE.name} />
       <meta property="og:locale" content="sq_AL" />
+      <meta property="og:locale:alternate" content="en_US" />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={absImage} />
+      <meta property="og:image:alt" content={fullTitle} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={absImage} />
 
       <meta name="author" content={SITE.name} />
-      <meta name="keywords" content="web development Shqipëri, agjenci SEO, krijim website, UX UI design, e-commerce Shqipëri, DevByLand" />
+      <meta name="geo.region" content="AL-11" />
+      <meta name="geo.placename" content="Tiranë" />
+      <meta
+        name="geo.position"
+        content={`${SITE.geo.lat};${SITE.geo.lng}`}
+      />
+      <meta name="ICBM" content={`${SITE.geo.lat}, ${SITE.geo.lng}`} />
+      <meta name="theme-color" content="#e67e22" />
+
+      {graphs.map((data, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(data)}
+        </script>
+      ))}
     </Helmet>
   );
 }

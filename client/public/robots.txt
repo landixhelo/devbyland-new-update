@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://devbyland.com/sitemap.xml
+Host: https://www.devbyland.com
+Sitemap: https://www.devbyland.com/sitemap.xml

@@ -835,8 +835,8 @@ a {
 
 @media (min-width: 768px) {
   .site-footer__grid {
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1.5fr 1fr 1fr 1.1fr;
+    gap: 2.5rem;
   }
 }
 
@@ -1115,6 +1115,8 @@ a {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
   transition:
     transform 0.55s var(--ease-soft),
     border-color 0.55s var(--ease-soft);
@@ -1421,6 +1423,105 @@ a {
 .testimonial-card footer span {
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+.service-detail-list {
+  display: grid;
+  gap: 0;
+}
+
+.service-detail-row {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.service-detail-row:first-child {
+  padding-top: 0;
+}
+
+.service-detail-row h2 {
+  font-family: var(--font-display);
+  font-weight: 750;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+}
+
+.service-detail-row > div > p {
+  color: var(--muted);
+  max-width: 62ch;
+  margin: 0 0 1rem;
+}
+
+.service-detail-bullets {
+  margin: 0 0 1.25rem;
+  padding-left: 1.15rem;
+  color: var(--ink);
+}
+
+.service-detail-bullets li {
+  margin-bottom: 0.4rem;
+}
+
+.service-detail-bullets--lg {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.service-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.service-detail-layout {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .service-detail-layout {
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+
+.service-side {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper-deep);
+}
+
+.service-side h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0 0 0.65rem;
+}
+
+.service-side p {
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.service-side ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.service-side li {
+  margin-bottom: 0.35rem;
+}
+
+.page-hero .section-label a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-hero .section-label a:hover {
+  color: var(--accent);
 }
 
 .audience-grid {

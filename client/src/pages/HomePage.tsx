@@ -5,6 +5,7 @@ import { CtaBand } from "../components/CtaBand";
 import { Seo } from "../components/Seo";
 import { TECH_STACK } from "../components/TechStack";
 import { useReveal } from "../hooks/useReveal";
+import { SITE } from "../lib/site";
 
 const services = [
   {
@@ -85,9 +86,45 @@ const testimonials = [
 export function HomePage() {
   useReveal();
 
+  const homeFaqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Sa kohë zgjat një projekt website në Shqipëri?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Një website prezantues zakonisht 1–3 javë. Platformat custom (e-commerce, rental, dashboard) variojnë sipas funksioneve.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "A ofroni krijim website në Tiranë?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Po. DevByLand është studio në Shqipëri që ndërton website, e-commerce, UX/UI dhe SEO për biznese lokale dhe remote.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "A përfshihet SEO në website?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Po — SEO bazë teknik, meta, strukturë dhe performancë. Ofrojmë edhe optimizim më të thellë sipas nevojës.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
-      <Seo path="/" />
+      <Seo
+        path="/"
+        title={SITE.defaultTitle}
+        description={SITE.defaultDescription}
+        jsonLd={homeFaqLd}
+      />
       <Navbar variant="home" />
 
       <header className="hero">
@@ -96,12 +133,12 @@ export function HomePage() {
             DevBy<span>Land</span>
           </h1>
           <p className="hero-lead">
-            Studio web që ndërton faqe, e-commerce dhe platforma digjitale për
-            biznese që duan të rriten online.
+            Krijim website, e-commerce dhe SEO në Tiranë — studio web që ndërton
+            faqe dhe platforma digjitale për biznese që duan të rriten online.
           </p>
           <div className="hero-actions">
-            <Link className="btn-brand" to="/projects">
-              Shiko projektet
+            <Link className="btn-brand" to="/services">
+              Shiko shërbimet
             </Link>
             <Link className="btn-ghost" to="/contact">
               Na kontakto
@@ -146,7 +183,7 @@ export function HomePage() {
             ))}
           </div>
           <div className="section-actions reveal">
-            <Link className="btn-brand" to="/contact">
+            <Link className="btn-brand" to="/services">
               Shiko shërbimet
             </Link>
           </div>

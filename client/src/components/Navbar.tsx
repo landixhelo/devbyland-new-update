@@ -36,7 +36,6 @@ function closeMobileNav() {
 
 export function Navbar({ variant = "inner" }: Props) {
   const { pathname } = useLocation();
-  const homeHash = (hash: string) => (pathname === "/" ? hash : `/${hash}`);
 
   return (
     <nav className="navbar navbar-expand-lg site-nav">
@@ -82,13 +81,15 @@ export function Navbar({ variant = "inner" }: Props) {
               </NavLink>
             </li>
             <li className="nav-item">
-              <a
-                className="nav-link"
-                href={homeHash("#services")}
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link${isActive ? " is-active" : ""}`
+                }
+                to="/services"
                 onClick={closeMobileNav}
               >
                 Shërbimet
-              </a>
+              </NavLink>
             </li>
             {variant === "home" && (
               <>
