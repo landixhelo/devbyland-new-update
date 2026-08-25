@@ -51,6 +51,10 @@ export function Seo({
         }
       />
       <meta name="googlebot" content="index, follow" />
+      <meta
+        name="google-site-verification"
+        content="nqRULRxd_N5WUXjujWHsgoYpuU8ZwRoXHWoGYWuWxIA"
+      />
       <link rel="canonical" href={url} />
 
       <meta property="og:type" content={type} />
