@@ -9,77 +9,115 @@ import { SITE } from "../lib/site";
 
 const services = [
   {
-    title: "Web Development",
-    text: "Website, e-commerce dhe aplikacione me React e Node — të shpejta, të sigurta dhe të gatshme për rritje.",
+    title: "Web development",
+    text: "Business websites and web apps built with React and Node. Fast, secure and easy to grow.",
   },
   {
-    title: "UX / UI Design",
-    text: "Ndërfaqe të qarta që përdoruesit i kuptojnë menjëherë — më pak fërkim, më shumë konvertime.",
+    title: "UX / UI design",
+    text: "Clear, modern interfaces designed around what your visitors need to do.",
   },
   {
     title: "E-commerce",
-    text: "Dyqane online me katalog, checkout dhe admin — të ndërtuara për shitje reale, jo vetëm pamje.",
+    text: "Online stores with catalog, checkout, admin panel and payments.",
   },
   {
-    title: "SEO & Performance",
-    text: "Optimizim për Google dhe shpejtësi ngarkimi, që biznesi yt të gjendet dhe të shitet më mirë.",
+    title: "SEO and performance",
+    text: "Technical SEO, speed optimisation and analytics so customers can find you.",
   },
   {
-    title: "Sisteme custom",
-    text: "Rezervime, rental, dashboard dhe paneli admin — logjikë biznesi e personalizuar.",
+    title: "Custom systems",
+    text: "Booking, rental and admin systems tailored to how your business works.",
   },
   {
-    title: "Mirëmbajtje",
-    text: "Përditësime, siguri dhe mbështetje e vazhdueshme pas lansimit — pa surpriza.",
+    title: "Maintenance",
+    text: "Updates, fixes and improvements after launch, so nothing breaks quietly.",
   },
 ];
 
-const industries = [
-  "E-commerce",
-  "Hospitality",
-  "Rental",
-  "Retail",
-  "Shërbime",
-  "Startups",
-];
-
-const values = [
+const projects = [
   {
-    title: "Fokus te rezultati",
-    text: "Çdo faqe ka një qëllim të qartë: kontakt, shitje ose rezervim.",
+    slug: "stitch-bear",
+    className: "project-card--featured project-card--stitch",
+    img: "/img/projects/stitch-bear.png",
+    alt: "Stitch Bear e-commerce",
+    tag: "E-commerce",
+    title: "Stitch Bear",
+    problem: "a handmade brand selling only through social media.",
+    built: "online store with catalog, checkout and admin.",
+    meta: ["React", "Node"],
+    delay: "",
   },
   {
-    title: "Pronësi e projektit",
-    text: "E trajtojmë produktin tënd si tonin — me kujdes te detaji dhe afatet.",
+    slug: "tavolina",
+    className: "project-card--tavolina",
+    img: "/img/projects/tavolina.png",
+    alt: "Tavolina hospitality",
+    tag: "Hospitality",
+    title: "Tavolina",
+    problem: "paper menus and manual order handling.",
+    built: "digital menu, ordering and POS for bars and restaurants.",
+    meta: ["POS", "Full-stack"],
+    delay: " reveal-delay-1",
   },
   {
-    title: "Komunikim 1:1",
-    text: "Feedback i shpejtë, pa zinxhirë të gjatë. Ti flet me atë që ndërton.",
-  },
-  {
-    title: "Stack modern",
-    text: "Teknologji që mbajnë shpejtësi dhe hapësirë për zgjerim të mëvonshëm.",
+    slug: "rental-car",
+    className: "project-card--autorent",
+    img: "/img/projects/autorent.png",
+    alt: "AutoRent rental platform",
+    tag: "Rental",
+    title: "AutoRent",
+    problem: "bookings handled by phone and spreadsheets.",
+    built: "rental platform with online booking and admin panel.",
+    meta: ["React", "PostgreSQL"],
+    delay: " reveal-delay-2",
   },
 ];
 
 const testimonials = [
   {
     quote:
-      "Faqja e re duket profesionale dhe klientët rezervojnë më lehtë. Procesi ishte i qartë nga fillimi deri te lansimi.",
-    name: "Klient hospitality",
+      "Clear communication and a website that finally matches how we want to present the business.",
+    name: "Client",
     role: "Tavolina",
   },
   {
     quote:
-      "Na duhej një platformë qiraje që të funksiononte në telefon. AutoRent na e dha — e pastër dhe e shpejtë.",
-    name: "Klient rental",
+      "We needed online bookings that work on mobile. The platform is fast, simple and easy to manage.",
+    name: "Client",
     role: "AutoRent",
   },
   {
     quote:
-      "Nga ideja te dyqani online, gjithçka u ndërtua me fokus te shitjet. Rekomandojmë DevByLand.",
-    name: "Klient e-commerce",
+      "From idea to live store, everything was built around selling — not just looking good.",
+    name: "Client",
     role: "Stitch Bear",
+  },
+];
+
+const faqs = [
+  {
+    q: "How long does a project take?",
+    a: "A website takes 2–4 weeks, a custom platform 6–12 weeks, depending on features.",
+  },
+  {
+    q: "Do you work with clients outside Albania?",
+    a: "Yes. We work remotely in English, on CET hours, with clients across Europe and beyond.",
+  },
+  {
+    q: "Does the price include hosting and domain?",
+    a: "We can set up and manage both for you. Costs are listed clearly in your quote.",
+  },
+  {
+    q: "Who owns the code?",
+    a: "You do. All code and assets are transferred to you after final payment.",
+  },
+  {
+    q: "Do you offer support after launch?",
+    a: "Yes. Monthly maintenance plans cover updates, fixes and small improvements.",
+  },
+  {
+    q: "Can you sign an NDA?",
+    a: "Of course. We are happy to sign one before discussing your project.",
   },
 ];
 
@@ -89,32 +127,11 @@ export function HomePage() {
   const homeFaqLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Sa kohë zgjat një projekt website në Shqipëri?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Një website prezantues zakonisht 1–3 javë. Platformat custom (e-commerce, rental, dashboard) variojnë sipas funksioneve.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "A ofroni krijim website në Tiranë?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Po. DevByLand është studio në Shqipëri që ndërton website, e-commerce, UX/UI dhe SEO për biznese lokale dhe remote.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "A përfshihet SEO në website?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Po — SEO bazë teknik, meta, strukturë dhe performancë. Ofrojmë edhe optimizim më të thellë sipas nevojës.",
-        },
-      },
-    ],
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
   };
 
   return (
@@ -129,43 +146,47 @@ export function HomePage() {
 
       <header className="hero">
         <div className="container">
+          <p className="hero-eyebrow">
+            Web development studio · Tirana, Albania · CET
+          </p>
           <h1 className="hero-brand">
-            DevBy<span>Land</span>
+            We build fast websites and web apps that bring you{" "}
+            <span>customers</span>.
           </h1>
           <p className="hero-lead">
-            Krijim website, e-commerce dhe SEO në Tiranë — studio web që ndërton
-            faqe dhe platforma digjitale për biznese që duan të rriten online.
+            Websites, e-commerce and booking systems for hospitality, rental and
+            retail businesses. Built with React and Node.js, optimised for
+            search, delivered on time.
           </p>
           <div className="hero-actions">
-            <Link className="btn-brand" to="/services">
-              Shiko shërbimet
+            <Link className="btn-brand" to="/contact">
+              Get a free quote
             </Link>
-            <Link className="btn-ghost" to="/contact">
-              Na kontakto
+            <Link className="btn-ghost" to="/projects">
+              See our work
             </Link>
           </div>
         </div>
       </header>
 
-      <section className="trust-strip" aria-label="Fokusi ynë">
+      <section className="trust-strip" aria-label="Tech stack">
         <div className="container trust-strip__inner">
-          <span>Stitch Bear</span>
-          <span>Tavolina</span>
-          <span>AutoRent</span>
-          <span>E-commerce</span>
-          <span>Hospitality</span>
-          <span>Rental</span>
+          {TECH_STACK.map((tech) => (
+            <span key={tech.name}>{tech.name}</span>
+          ))}
         </div>
       </section>
 
       <section className="section" id="services">
         <div className="container">
           <div className="section-head reveal">
-            <p className="section-label">Çfarë ndërtojmë</p>
-            <h2 className="section-title">Gjithçka që të duhet për prani serioze online</h2>
+            <p className="section-label">What we do</p>
+            <h2 className="section-title">
+              Everything you need to look serious online
+            </h2>
             <p className="section-text">
-              Nga ideja te lansimi — dizajn, kod dhe optimizim që sjellin
-              klientë.
+              From first idea to launch: design, development and search
+              optimisation in one place.
             </p>
           </div>
           <div className="service-cards">
@@ -184,7 +205,7 @@ export function HomePage() {
           </div>
           <div className="section-actions reveal">
             <Link className="btn-brand" to="/services">
-              Shiko shërbimet
+              View all services
             </Link>
           </div>
         </div>
@@ -193,11 +214,13 @@ export function HomePage() {
       <section className="mid-cta">
         <div className="container mid-cta__inner reveal">
           <div>
-            <h2>Gati për një faqe që punon për biznesin tënd?</h2>
-            <p>Konsultë e shkurtër — pa obligim. Të tregojmë hapin e parë.</p>
+            <h2>Need a website that works for your business?</h2>
+            <p>
+              Tell us about your project and get a clear quote within 24 hours.
+            </p>
           </div>
           <Link className="btn-brand" to="/contact">
-            Konsultë falas
+            Get a free quote
           </Link>
         </div>
       </section>
@@ -205,27 +228,27 @@ export function HomePage() {
       <section className="section section--paper-deep" id="stats">
         <div className="container">
           <div className="section-head reveal">
-            <p className="section-label">Rezultatet</p>
+            <p className="section-label">Why us</p>
             <h2 className="section-title">
-              Nuk flasim vetëm — <em>dorëzojmë</em>
+              A small studio, fully focused on your result
             </h2>
           </div>
           <div className="stats-grid reveal">
             <div className="stats-item">
               <strong>3+</strong>
-              <p>produkte digjitale në portfolio aktiv</p>
+              <p>live products in our portfolio</p>
             </div>
             <div className="stats-item">
-              <strong>100%</strong>
-              <p>fokus te mobile dhe performancë</p>
+              <strong>24h</strong>
+              <p>reply time on every enquiry</p>
             </div>
             <div className="stats-item">
               <strong>1:1</strong>
-              <p>komunikim direkt gjatë projektit</p>
+              <p>direct contact with the developer</p>
             </div>
             <div className="stats-item">
-              <strong>4</strong>
-              <p>hapa të qartë deri te lansimi</p>
+              <strong>100%</strong>
+              <p>code ownership transferred to you</p>
             </div>
           </div>
         </div>
@@ -235,157 +258,53 @@ export function HomePage() {
         <div className="container">
           <div className="section-head row-between reveal">
             <div>
-              <p className="section-label">Portfolio</p>
-              <h2 className="section-title">Projekte të zgjedhura</h2>
-              <p className="section-text">
-                Punë reale për e-commerce, restorante dhe rental — të dizajnuara
-                për shitje dhe përvojë të pastër.
-              </p>
+              <p className="section-label">Selected work</p>
+              <h2 className="section-title">Real projects, real businesses</h2>
             </div>
             <Link className="link-arrow" to="/projects">
-              Të gjitha projektet →
+              All projects →
             </Link>
           </div>
 
           <div className="project-grid">
-            <Link
-              className="project-card project-card--featured project-card--stitch reveal"
-              to="/projects#stitch-bear"
-            >
-              <div className="project-card__visual">
-                <img
-                  className="project-card__img"
-                  src="/img/projects/stitch-bear.png"
-                  alt="Stitch Bear e-commerce"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span className="project-card__tag">E-commerce</span>
-              <h3 className="project-card__title">Stitch Bear</h3>
-              <p className="project-card__desc">
-                Dyqan online për produkte handmade — katalog, checkout dhe admin
-                për menaxhim të lehtë.
-              </p>
-              <div className="project-card__meta">
-                <span>React</span>
-                <span>Node</span>
-                <span>Shop</span>
-              </div>
-            </Link>
-
-            <Link
-              className="project-card project-card--tavolina reveal reveal-delay-1"
-              to="/projects#tavolina"
-            >
-              <div className="project-card__visual">
-                <img
-                  className="project-card__img"
-                  src="/img/projects/tavolina.png"
-                  alt="Tavolina rezervime"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span className="project-card__tag">Bar & Restorant</span>
-              <h3 className="project-card__title">Tavolina</h3>
-              <p className="project-card__desc">
-                Sistem për menu, porosi dhe operacione ditore të
-                bar-restorantit.
-              </p>
-              <div className="project-card__meta">
-                <span>Full-stack</span>
-                <span>POS</span>
-              </div>
-            </Link>
-
-            <Link
-              className="project-card project-card--autorent reveal reveal-delay-2"
-              to="/projects#rental-car"
-            >
-              <div className="project-card__visual">
-                <img
-                  className="project-card__img"
-                  src="/img/projects/autorent.png"
-                  alt="AutoRent flota"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span className="project-card__tag">Rental</span>
-              <h3 className="project-card__title">AutoRent</h3>
-              <p className="project-card__desc">
-                Platformë qiraje makinash me rezervime, admin dhe përvojë
-                mobile.
-              </p>
-              <div className="project-card__meta">
-                <span>React</span>
-                <span>PostgreSQL</span>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--paper-deep" id="values">
-        <div className="container">
-          <div className="section-head reveal">
-            <p className="section-label">Si kujdesemi</p>
-            <h2 className="section-title">
-              Projektin tënd e trajtojmë si tonin
-            </h2>
-            <p className="section-text">
-              Studio e vogël, fokus i madh — cilësi, afate dhe komunikim i
-              hapur.
-            </p>
-          </div>
-          <div className="value-cards">
-            {values.map((item, i) => (
-              <article
-                className={`value-card reveal${i ? ` reveal-delay-${Math.min(i, 3)}` : ""}`}
-                key={item.title}
+            {projects.map((p) => (
+              <Link
+                key={p.slug}
+                className={`project-card ${p.className} reveal${p.delay}`}
+                to={`/projects#${p.slug}`}
               >
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
+                <div className="project-card__visual">
+                  <img
+                    className="project-card__img"
+                    src={p.img}
+                    alt={p.alt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <span className="project-card__tag">{p.tag}</span>
+                <h3 className="project-card__title">{p.title}</h3>
+                <p className="project-card__desc">
+                  <strong>Problem:</strong> {p.problem}
+                  <br />
+                  <strong>Built:</strong> {p.built}
+                </p>
+                <div className="project-card__meta">
+                  {p.meta.map((m) => (
+                    <span key={m}>{m}</span>
+                  ))}
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section" id="industries">
+      <section className="section section--paper-deep" id="testimonials">
         <div className="container">
           <div className="section-head reveal">
-            <p className="section-label">Industritë</p>
-            <h2 className="section-title">Përvojë në sektore të ndryshme</h2>
-            <p className="section-text">
-              Ndihmojmë marka lokale të shesin, rezervojnë dhe komunikojnë më
-              mirë digjitalisht.
-            </p>
-          </div>
-          <div className="industry-grid">
-            {industries.map((name, i) => (
-              <div
-                className={`industry-chip reveal reveal-delay-${(i % 3) + 1}`}
-                key={name}
-                style={{ ["--i" as string]: String(i) }}
-              >
-                <span className="industry-chip__index">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <strong>{name}</strong>
-                <span className="industry-chip__glow" aria-hidden="true" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section" id="testimonials">
-        <div className="container">
-          <div className="section-head reveal">
-            <p className="section-label">Klientët</p>
-            <h2 className="section-title">Çfarë thonë për punën tonë</h2>
+            <p className="section-label">Client feedback</p>
+            <h2 className="section-title">What clients say</h2>
           </div>
           <div className="testimonial-grid">
             {testimonials.map((item, i) => (
@@ -410,64 +329,38 @@ export function HomePage() {
       <section className="section section--ink" id="process">
         <div className="container">
           <div className="section-head reveal">
-            <p className="section-label">Si punojmë</p>
-            <h2 className="section-title">Katër hapa, zero kaos</h2>
-            <p className="section-text">
-              Proces i qartë nga biseda e parë deri te lansimi — me feedback të
-              vazhdueshëm.
-            </p>
+            <p className="section-label">Process</p>
+            <h2 className="section-title">Four steps, zero chaos</h2>
           </div>
           <div className="process-track">
             <div className="process-step reveal">
               <span className="process-step__num">01</span>
               <h3>Briefing</h3>
               <p>
-                Kuptojmë biznesin, audiencën dhe qëllimin — shitje, rezervim ose
-                prezantim.
+                We learn your goals, audience and what success looks like.
               </p>
             </div>
             <div className="process-step reveal reveal-delay-1">
               <span className="process-step__num">02</span>
-              <h3>Dizajn</h3>
+              <h3>Design</h3>
               <p>
-                Struktura dhe UI që përputhen me markën — para se të shkruhet
-                kodi.
+                You see the structure and look before a single line of code.
               </p>
             </div>
             <div className="process-step reveal reveal-delay-2">
               <span className="process-step__num">03</span>
               <h3>Build</h3>
               <p>
-                Zhvillim i pastër, i shpejtë dhe i testuar në desktop e mobile.
+                Short sprints with regular demos on desktop and mobile.
               </p>
             </div>
             <div className="process-step reveal reveal-delay-3">
               <span className="process-step__num">04</span>
-              <h3>Lansim</h3>
+              <h3>Launch</h3>
               <p>
-                Deploy, SEO bazë, training dhe mbështetje pas publikimit.
+                Deployment, SEO setup, training and support after go-live.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--paper-deep" id="tech">
-        <div className="container">
-          <div className="section-head reveal">
-            <p className="section-label">Stack</p>
-            <h2 className="section-title">Teknologjitë që përdorim</h2>
-            <p className="section-text">
-              Mjete moderne që mbajnë shpejtësi, siguri dhe hapësirë për rritje.
-            </p>
-          </div>
-          <div className="tech-marquee reveal">
-            {TECH_STACK.map((tech) => (
-              <span className="tech-chip" key={tech.name}>
-                {tech.icon}
-                {tech.name}
-              </span>
-            ))}
           </div>
         </div>
       </section>
@@ -476,64 +369,66 @@ export function HomePage() {
         <div className="container">
           <div className="section-head row-between reveal">
             <div>
-              <p className="section-label">Paketat</p>
-              <h2 className="section-title">Zgjidh planin që të përshtatet</h2>
+              <p className="section-label">Pricing</p>
+              <h2 className="section-title">
+                Pick the plan that fits your business
+              </h2>
               <p className="section-text">
-                Nga prezantim i thjeshtë te platformë e plotë — çmimi final
-                varet nga scope.
+                Fixed-price quotes. Prices in euro, no hidden costs.
               </p>
             </div>
             <Link className="link-arrow" to="/contact">
-              Kërko ofertë →
+              Request a quote →
             </Link>
           </div>
           <div className="package-grid">
             <div className="package-tier reveal">
-              <p className="package-tier__name">Starter</p>
-              <h3>Website prezantues</h3>
+              <p className="package-tier__name">Starter website</p>
+              <h3>From quote</h3>
               <p className="package-tier__desc">
-                Ideale për biznese që duan prani profesionale online shpejt.
+                Ideal for businesses that need a professional online presence
+                quickly.
               </p>
               <ul>
-                <li>Deri në 5 faqe</li>
-                <li>Dizajn responsive</li>
-                <li>Formë kontakti</li>
-                <li>SEO bazë</li>
+                <li>Up to 5 pages</li>
+                <li>Responsive design</li>
+                <li>Contact form</li>
+                <li>Basic SEO</li>
               </ul>
               <Link className="btn-brand" to="/contact">
-                Fillo
+                Get a quote
               </Link>
             </div>
             <div className="package-tier package-tier--featured reveal reveal-delay-1">
-              <p className="package-tier__name">Business</p>
-              <h3>Web + funksione</h3>
+              <p className="package-tier__name">Web + features</p>
+              <h3>From quote</h3>
               <p className="package-tier__desc">
-                Për marka që duan më shumë se një faqe statike.
+                For brands that need more than a static brochure site.
               </p>
               <ul>
-                <li>Deri në 10 faqe / seksione</li>
-                <li>UI i personalizuar</li>
-                <li>Integrime (email, maps, etj.)</li>
-                <li>Optimizim performancë</li>
+                <li>Up to 10 pages</li>
+                <li>Custom UI design</li>
+                <li>Integrations (maps, payments, email)</li>
+                <li>Performance optimisation</li>
               </ul>
               <Link className="btn-brand" to="/contact">
-                Fillo
+                Get a quote
               </Link>
             </div>
             <div className="package-tier reveal reveal-delay-2">
-              <p className="package-tier__name">Custom</p>
-              <h3>Platformë e plotë</h3>
+              <p className="package-tier__name">Full platform</p>
+              <h3>From quote</h3>
               <p className="package-tier__desc">
-                E-commerce, rental, dashboard ose sistem i dedikuar.
+                E-commerce, rental, booking or a dedicated system.
               </p>
               <ul>
-                <li>Full-stack custom</li>
-                <li>Panel admin</li>
-                <li>Auth & database</li>
-                <li>Deploy + mirëmbajtje</li>
+                <li>E-commerce, rental or booking</li>
+                <li>Admin panel and database</li>
+                <li>User accounts and auth</li>
+                <li>Deployment and maintenance</li>
               </ul>
               <Link className="btn-brand" to="/contact">
-                Fillo
+                Get a quote
               </Link>
             </div>
           </div>
@@ -544,56 +439,23 @@ export function HomePage() {
         <div className="container">
           <div className="section-head reveal">
             <p className="section-label">FAQ</p>
-            <h2 className="section-title">Pyetje të shpeshta</h2>
-            <p className="section-text">
-              Përgjigje të shkurtra para se të na shkruash.
-            </p>
+            <h2 className="section-title">Questions we hear often</h2>
           </div>
           <div className="faq-list reveal">
-            <details className="faq-item">
-              <summary>Sa kohë zgjat një projekt?</summary>
-              <p>
-                Një website prezantues zakonisht 1–3 javë. Platformat custom
-                (e-commerce, rental, dashboard) variojnë sipas funksioneve — të
-                japim afat të qartë pas briefing-ut.
-              </p>
-            </details>
-            <details className="faq-item">
-              <summary>A punoni vetëm me biznese në Shqipëri?</summary>
-              <p>
-                Jemi të bazuar në Shqipëri, por punojmë edhe me klientë remote.
-                Komunikimi bëhet në shqip ose anglisht.
-              </p>
-            </details>
-            <details className="faq-item">
-              <summary>A përfshihet hosting dhe domain?</summary>
-              <p>
-                Mund t’i setup-ojmë për ty (Vercel, Railway, etj.). Domain
-                zakonisht blen ti; ne e lidhim dhe e konfigurojmë.
-              </p>
-            </details>
-            <details className="faq-item">
-              <summary>Çfarë më duhet të sjell para fillimit?</summary>
-              <p>
-                Logo (nëse ke), foto, tekstet kryesore dhe një ide të qartë çfarë
-                duhet të bëjë faqja. Nëse nuk i ke gati, të ndihmojmë edhe me
-                strukturën e përmbajtjes.
-              </p>
-            </details>
-            <details className="faq-item">
-              <summary>A ofroni mirëmbajtje pas lansimit?</summary>
-              <p>
-                Po — përditësime, backup, ndryshime të vogla dhe mbështetje
-                teknike me plan mujor ose sipas nevojës.
-              </p>
-            </details>
+            {faqs.map((f) => (
+              <details className="faq-item" key={f.q}>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
 
       <CtaBand
-        title="Ke një ide? Le ta ndërtojmë."
-        text="Na trego biznesin tënd — të propozojmë zgjidhjen e duhur dhe hapin e parë."
+        title="Got an idea? Let’s build it together."
+        text="Tell us about your business and we’ll propose the right solution within 24 hours."
+        cta="Book a free call"
       />
       <Footer showExtraLinks />
     </>

@@ -38,7 +38,7 @@ export function Seo({
 
   return (
     <Helmet>
-      <html lang="sq" />
+      <html lang="en" />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
@@ -59,8 +59,8 @@ export function Seo({
 
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={SITE.name} />
-      <meta property="og:locale" content="sq_AL" />
-      <meta property="og:locale:alternate" content="en_US" />
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale:alternate" content="sq_AL" />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />

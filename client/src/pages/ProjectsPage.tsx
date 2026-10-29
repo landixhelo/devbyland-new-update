@@ -28,19 +28,19 @@ export function ProjectsPage() {
   return (
     <>
       <Seo
-        title="Projekte | Website & E-commerce në Shqipëri"
-        description="Portfolio DevByLand: Stitch Bear e-commerce, Tavolina bar-restorant dhe AutoRent — projekte web reale në Shqipëri."
+        title="Work | Selected projects"
+        description="Selected DevByLand work: Stitch Bear e-commerce, Tavolina hospitality and AutoRent — real products for real businesses."
         path="/projects"
-        keywords={`portfolio web Shqipëri, projekte e-commerce, ${SITE.keywords}`}
+        keywords={`web portfolio Albania, e-commerce project, ${SITE.keywords}`}
       />
       <Navbar />
       <header className="page-hero">
         <div className="container">
-          <p className="section-label">Portfolio</p>
-          <h1>Projekte</h1>
+          <p className="section-label">Selected work</p>
+          <h1>Real projects, real businesses</h1>
           <p>
-            Tre produkte digjitale që tregojnë se si punojmë — e-commerce,
-            hospitality dhe rental.
+            Three digital products that show how we work — e-commerce,
+            hospitality and rental.
           </p>
         </div>
       </header>
@@ -64,9 +64,11 @@ export function ProjectsPage() {
                 <p className="section-label">E-commerce</p>
                 <h2>Stitch Bear</h2>
                 <p>
-                  Platformë e-commerce për markë handmade. Katalog produktesh,
-                  checkout, panel admin dhe përvojë blerjeje e pastër — e
-                  ndërtuar për shitje online pa komplikime.
+                  <strong>Problem:</strong> a handmade brand selling only
+                  through social media.
+                  <br />
+                  <strong>Built:</strong> online store with catalog, checkout
+                  and admin.
                 </p>
                 <div
                   className="project-card__meta"
@@ -74,11 +76,11 @@ export function ProjectsPage() {
                 >
                   <span style={tagStyle}>React</span>
                   <span style={tagStyle}>Node.js</span>
-                  <span style={tagStyle}>PostgreSQL</span>
+                  <span style={tagStyle}>Shop</span>
                 </div>
                 <div className="portfolio-item__actions">
                   <Link className="btn-brand" to="/contact">
-                    Projekt i ngjashëm?
+                    Similar project?
                   </Link>
                 </div>
               </div>
@@ -90,31 +92,33 @@ export function ProjectsPage() {
                   <img
                     className="project-card__img"
                     src="/img/projects/tavolina.png"
-                    alt="Tavolina rezervime"
+                    alt="Tavolina hospitality"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
               </div>
               <div className="portfolio-item__body">
-                <p className="section-label">Bar & Restorant</p>
+                <p className="section-label">Hospitality</p>
                 <h2>Tavolina</h2>
                 <p>
-                  Sistem digjital për bar dhe restorant: menu, porosi, role stafi
-                  dhe rrjedhë pune në kohë reale. Ndërtuar për operacione ditore
-                  — jo vetëm për pamje.
+                  <strong>Problem:</strong> paper menus and manual order
+                  handling.
+                  <br />
+                  <strong>Built:</strong> digital menu, ordering and POS for
+                  bars and restaurants.
                 </p>
                 <div
                   className="project-card__meta"
                   style={{ marginBottom: "1.25rem" }}
                 >
                   <span style={tagStyle}>Full-stack</span>
-                  <span style={tagStyle}>Dashboard</span>
+                  <span style={tagStyle}>POS</span>
                   <span style={tagStyle}>Ops</span>
                 </div>
                 <div className="portfolio-item__actions">
                   <Link className="btn-brand" to="/contact">
-                    Projekt i ngjashëm?
+                    Similar project?
                   </Link>
                 </div>
               </div>
@@ -126,19 +130,21 @@ export function ProjectsPage() {
                   <img
                     className="project-card__img"
                     src="/img/projects/autorent.png"
-                    alt="AutoRent flota"
+                    alt="AutoRent fleet"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
               </div>
               <div className="portfolio-item__body">
-                <p className="section-label">Car Rental</p>
+                <p className="section-label">Rental</p>
                 <h2>AutoRent</h2>
                 <p>
-                  Platformë qiraje makinash me kërkim, rezervime, panel admin
-                  dhe akses për kontraktorë. Dizajn i fokusuar te shpejtësia e
-                  rezervimit dhe menaxhimi i flotës.
+                  <strong>Problem:</strong> bookings handled by phone and
+                  spreadsheets.
+                  <br />
+                  <strong>Built:</strong> rental platform with online booking
+                  and admin panel.
                 </p>
                 <div
                   className="project-card__meta"
@@ -155,10 +161,10 @@ export function ProjectsPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Shiko live
+                    View live site
                   </a>
                   <Link className="link-arrow" to="/contact">
-                    Na shkruaj →
+                    Get in touch →
                   </Link>
                 </div>
               </div>
@@ -168,8 +174,9 @@ export function ProjectsPage() {
       </section>
 
       <CtaBand
-        title="Projekti yt i radhës"
-        text="Na trego çfarë do të ndërtosh — e-commerce, restorant, rental ose diçka tjetër."
+        title="Got an idea? Let’s build it together."
+        text="Tell us about your business and we’ll propose the right solution within 24 hours."
+        cta="Book a free call"
       />
       <Footer />
     </>

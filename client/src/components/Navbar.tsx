@@ -1,4 +1,4 @@
-import { NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { SITE } from "../lib/site";
 
 type Props = {
@@ -35,8 +35,6 @@ function closeMobileNav() {
 }
 
 export function Navbar({ variant = "inner" }: Props) {
-  const { pathname } = useLocation();
-
   return (
     <nav className="navbar navbar-expand-lg site-nav">
       <div className="container">
@@ -60,13 +58,12 @@ export function Navbar({ variant = "inner" }: Props) {
             <li className="nav-item">
               <NavLink
                 className={({ isActive }) =>
-                  `nav-link${isActive && pathname === "/" ? " is-active" : ""}`
+                  `nav-link${isActive ? " is-active" : ""}`
                 }
-                to="/"
-                end
+                to="/services"
                 onClick={closeMobileNav}
               >
-                Kreu
+                Services
               </NavLink>
             </li>
             <li className="nav-item">
@@ -77,18 +74,7 @@ export function Navbar({ variant = "inner" }: Props) {
                 to="/projects"
                 onClick={closeMobileNav}
               >
-                Projekte
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link${isActive ? " is-active" : ""}`
-                }
-                to="/services"
-                onClick={closeMobileNav}
-              >
-                Shërbimet
+                Work
               </NavLink>
             </li>
             {variant === "home" && (
@@ -99,7 +85,7 @@ export function Navbar({ variant = "inner" }: Props) {
                     href="#process"
                     onClick={closeMobileNav}
                   >
-                    Procesi
+                    Process
                   </a>
                 </li>
                 <li className="nav-item">
@@ -108,7 +94,12 @@ export function Navbar({ variant = "inner" }: Props) {
                     href="#packages"
                     onClick={closeMobileNav}
                   >
-                    Paketat
+                    Pricing
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#faq" onClick={closeMobileNav}>
+                    FAQ
                   </a>
                 </li>
               </>
@@ -121,7 +112,7 @@ export function Navbar({ variant = "inner" }: Props) {
                 to="/contact"
                 onClick={closeMobileNav}
               >
-                Kontakt
+                Contact
               </NavLink>
             </li>
             <li className="nav-item">
@@ -137,7 +128,7 @@ export function Navbar({ variant = "inner" }: Props) {
             </li>
             <li className="nav-item">
               <Link className="nav-cta" to="/contact" onClick={closeMobileNav}>
-                Fillo projektin
+                Get a free quote
               </Link>
             </li>
           </ul>

@@ -296,14 +296,25 @@ a {
   z-index: 1;
 }
 
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  margin: 0 0 1rem;
+  animation: heroIn 0.9s var(--ease) both;
+}
+
 .hero-brand {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(3.4rem, 11vw, 7.5rem);
-  line-height: 0.92;
-  letter-spacing: -0.05em;
+  font-size: clamp(2.1rem, 5.5vw, 4.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
   margin: 0 0 1.25rem;
-  max-width: 12ch;
+  max-width: 18ch;
   animation: heroIn 0.9s var(--ease) both;
 }
 
@@ -1954,7 +1965,8 @@ a {
   }
 
   .hero-brand {
-    font-size: clamp(2.4rem, 6.5vw, 4.25rem);
+    font-size: clamp(1.9rem, 5.5vw, 3.2rem);
+    max-width: none;
   }
 
   .hero-actions .btn-brand,
@@ -2013,9 +2025,13 @@ a {
   }
 
   .hero-brand {
-    font-size: clamp(1.85rem, 8.5vw, 2.5rem);
+    font-size: clamp(1.65rem, 7.2vw, 2.35rem);
     max-width: none;
     margin-bottom: 0.85rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
   }
 
   .hero-lead {
@@ -2198,7 +2214,7 @@ a {
 
 @media (max-width: 575.98px) {
   .hero-brand {
-    font-size: clamp(1.7rem, 7.8vw, 2.15rem);
+    font-size: clamp(1.55rem, 7vw, 2rem);
   }
 
   .project-card,
@@ -2252,7 +2268,7 @@ a {
 
 @media (max-width: 379.98px) {
   .hero-brand {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
   }
 
   .btn-brand,

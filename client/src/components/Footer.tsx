@@ -17,45 +17,15 @@ export function Footer({ showExtraLinks = false }: Props) {
               DevBy<span>Land</span>
             </p>
             <p>
-              Krijim website, e-commerce, UX/UI dhe SEO për biznese në Tiranë dhe
-              Shqipëri.
+              Websites, e-commerce and UX/UI for businesses in Albania and
+              abroad.
             </p>
           </div>
           <div>
-            <h4>Navigim</h4>
+            <h4>Services</h4>
             <ul>
               <li>
-                <Link to="/">Kreu</Link>
-              </li>
-              <li>
-                <Link to="/services">Shërbimet</Link>
-              </li>
-              <li>
-                <Link to="/projects">Projekte</Link>
-              </li>
-              {showExtraLinks && (
-                <>
-                  <li>
-                    <a href="/#process">Procesi</a>
-                  </li>
-                  <li>
-                    <a href="/#packages">Paketat</a>
-                  </li>
-                  <li>
-                    <a href="/#faq">FAQ</a>
-                  </li>
-                </>
-              )}
-              <li>
-                <Link to="/contact">Kontakt</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4>Shërbimet</h4>
-            <ul>
-              <li>
-                <Link to="/services/web-development">Krijim website</Link>
+                <Link to="/services/web-development">Websites</Link>
               </li>
               <li>
                 <Link to="/services/ecommerce">E-commerce</Link>
@@ -69,7 +39,31 @@ export function Footer({ showExtraLinks = false }: Props) {
             </ul>
           </div>
           <div>
-            <h4>Kontakt</h4>
+            <h4>Company</h4>
+            <ul>
+              <li>
+                <Link to="/projects">Projects</Link>
+              </li>
+              {showExtraLinks && (
+                <>
+                  <li>
+                    <a href="/#process">Process</a>
+                  </li>
+                  <li>
+                    <a href="/#packages">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="/#faq">FAQ</a>
+                  </li>
+                </>
+              )}
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
             <ul>
               <li>
                 <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
@@ -95,7 +89,16 @@ export function Footer({ showExtraLinks = false }: Props) {
                   Instagram
                 </a>
               </li>
-              <li>{SITE.address}</li>
+              <li>
+                <a
+                  href={SITE.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li>Tirana, Albania</li>
             </ul>
           </div>
         </div>

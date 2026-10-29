@@ -30,7 +30,7 @@ export function ServiceDetailPage() {
         url: SITE.url,
       },
       areaServed: [
-        { "@type": "City", name: "Tiranë" },
+        { "@type": "City", name: "Tirana" },
         { "@type": "Country", name: "Albania" },
       ],
       serviceType: service.name,
@@ -42,13 +42,13 @@ export function ServiceDetailPage() {
         {
           "@type": "ListItem",
           position: 1,
-          name: "Kreu",
+          name: "Home",
           item: SITE.url,
         },
         {
           "@type": "ListItem",
           position: 2,
-          name: "Shërbimet",
+          name: "Services",
           item: `${SITE.url}/services`,
         },
         {
@@ -88,7 +88,7 @@ export function ServiceDetailPage() {
       <header className="page-hero">
         <div className="container">
           <p className="section-label">
-            <Link to="/services">Shërbimet</Link> / {service.shortName}
+            <Link to="/services">Services</Link> / {service.shortName}
           </p>
           <h1>{service.h1}</h1>
           <p>{service.intro}</p>
@@ -98,20 +98,23 @@ export function ServiceDetailPage() {
       <section className="section">
         <div className="container service-detail-layout">
           <div className="reveal">
-            <h2 className="section-title">Çfarë përfshihet</h2>
+            <h2 className="section-title">What’s included</h2>
             <ul className="service-detail-bullets service-detail-bullets--lg">
               {service.bullets.map((b) => (
                 <li key={b}>{b}</li>
               ))}
             </ul>
-            <div className="service-detail-actions" style={{ marginTop: "1.75rem" }}>
+            <div
+              className="service-detail-actions"
+              style={{ marginTop: "1.75rem" }}
+            >
               <Link className="btn-brand" to="/contact">
-                Kërko ofertë
+                Get a quote
               </Link>
               <a
                 className="btn-ghost"
                 href={`${SITE.whatsappUrl}?text=${encodeURIComponent(
-                  `Përshëndetje! Dua info për: ${service.name}`
+                  `Hi DevByLand! I’d like info about: ${service.name}`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -122,16 +125,16 @@ export function ServiceDetailPage() {
           </div>
 
           <aside className="service-side reveal reveal-delay-1">
-            <h3>Pse DevByLand?</h3>
+            <h3>Why DevByLand?</h3>
             <p>
-              Studio e vogël në Tiranë me fokus te rezultati: website që sjellin
-              kontakt, shitje ose rezervim — jo vetëm pamje.
+              A small studio in Tirana focused on results: websites that bring
+              contact, sales or bookings — not just looks.
             </p>
             <ul>
-              <li>Komunikim 1:1</li>
-              <li>Proces i qartë</li>
-              <li>Stack modern</li>
-              <li>Mbështetje pas lansimit</li>
+              <li>1:1 communication</li>
+              <li>Clear process</li>
+              <li>Modern stack</li>
+              <li>Support after launch</li>
             </ul>
           </aside>
         </div>
@@ -141,7 +144,7 @@ export function ServiceDetailPage() {
         <div className="container">
           <div className="section-head reveal">
             <p className="section-label">FAQ</p>
-            <h2 className="section-title">Pyetje për {service.shortName}</h2>
+            <h2 className="section-title">Questions about {service.shortName}</h2>
           </div>
           <div className="faq-list reveal">
             {service.faqs.map((f) => (
@@ -157,8 +160,8 @@ export function ServiceDetailPage() {
       <section className="section">
         <div className="container">
           <div className="section-head reveal">
-            <p className="section-label">Shërbime të tjera</p>
-            <h2 className="section-title">Mund të të interesojë edhe</h2>
+            <p className="section-label">Other services</p>
+            <h2 className="section-title">You might also need</h2>
           </div>
           <div className="service-cards">
             {related.map((s, i) => (
@@ -177,8 +180,8 @@ export function ServiceDetailPage() {
       </section>
 
       <CtaBand
-        title={`Le të flasim për ${service.shortName}`}
-        text="Na shkruaj — të japim hapin e radhës dhe një vlerësim realist."
+        title={`Let’s talk about ${service.shortName}`}
+        text="Tell us what you need — we’ll reply with next steps and a realistic estimate."
       />
       <Footer showExtraLinks />
     </>

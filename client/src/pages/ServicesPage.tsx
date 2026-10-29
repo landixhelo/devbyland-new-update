@@ -12,9 +12,9 @@ export function ServicesPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Shërbimet DevByLand",
+    name: "DevByLand Services",
     description:
-      "Web development, e-commerce, UX/UI dhe SEO për biznese në Tiranë dhe Shqipëri.",
+      "Web development, e-commerce, UX/UI and SEO for businesses in Tirana and abroad.",
     url: `${SITE.url}/services`,
     isPartOf: { "@id": `${SITE.url}/#website` },
     about: SERVICES.map((s) => ({
@@ -27,20 +27,20 @@ export function ServicesPage() {
   return (
     <>
       <Seo
-        title="Shërbimet | Krijim Website, E-commerce, UX/UI & SEO"
-        description="Shërbimet DevByLand në Tiranë: krijim website, e-commerce, UX/UI design dhe SEO. Zgjidhje digjitale për biznese në Shqipëri."
+        title="Services | Websites, E-commerce, UX/UI & SEO"
+        description="What we do: web development, e-commerce, UX/UI design and SEO — from first idea to launch."
         path="/services"
-        keywords={`${SITE.keywords}, shërbime web, agjenci digjitale Tiranë`}
+        keywords={`${SITE.keywords}, web agency Albania`}
         jsonLd={jsonLd}
       />
       <Navbar />
       <header className="page-hero">
         <div className="container">
-          <p className="section-label">Shërbimet</p>
-          <h1>Çfarë ndërtojmë për biznesin tënd</h1>
+          <p className="section-label">Services</p>
+          <h1>Everything you need to look serious online</h1>
           <p>
-            Nga website prezantues te e-commerce dhe SEO — zgjidhje të qarta për
-            marka në Tiranë dhe në gjithë Shqipërinë.
+            From first idea to launch: design, development and search
+            optimisation in one place.
           </p>
         </div>
       </header>
@@ -68,10 +68,10 @@ export function ServicesPage() {
                       className="btn-brand"
                       to={`/services/${service.slug}`}
                     >
-                      Më shumë për {service.shortName}
+                      More about {service.shortName}
                     </Link>
                     <Link className="link-arrow" to="/contact">
-                      Kërko ofertë →
+                      Get a quote →
                     </Link>
                   </div>
                 </div>
@@ -82,8 +82,8 @@ export function ServicesPage() {
       </section>
 
       <CtaBand
-        title="Gati të fillojmë?"
-        text="Na trego çfarë të duhet — website, dyqan online apo SEO — dhe të propozojmë hapin e parë."
+        title="Need a website that works for your business?"
+        text="Tell us about your project and get a clear quote within 24 hours."
       />
       <Footer showExtraLinks />
     </>

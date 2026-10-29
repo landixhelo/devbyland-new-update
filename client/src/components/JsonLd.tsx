@@ -24,8 +24,8 @@ export function JsonLd() {
         address: {
           "@type": "PostalAddress",
           streetAddress: "Bulevardi Dëshmorët e Kombit",
-          addressLocality: "Tiranë",
-          addressRegion: "Tiranë",
+          addressLocality: "Tirana",
+          addressRegion: "Tirana",
           addressCountry: "AL",
         },
         geo: {
@@ -34,7 +34,7 @@ export function JsonLd() {
           longitude: SITE.geo.lng,
         },
         areaServed: [
-          { "@type": "City", name: "Tiranë" },
+          { "@type": "City", name: "Tirana" },
           { "@type": "Country", name: "Albania" },
         ],
         sameAs: [SITE.instagram, SITE.linkedin],
@@ -44,7 +44,7 @@ export function JsonLd() {
             contactType: "sales",
             email: SITE.email,
             telephone: SITE.phoneE164,
-            availableLanguage: ["sq", "en"],
+            availableLanguage: ["en", "sq"],
             areaServed: "AL",
           },
         ],
@@ -80,7 +80,7 @@ export function JsonLd() {
         name: SITE.name,
         description: SITE.defaultDescription,
         publisher: { "@id": `${SITE.url}/#organization` },
-        inLanguage: ["sq", "en"],
+        inLanguage: ["en", "sq"],
         potentialAction: {
           "@type": "SearchAction",
           target: `${SITE.url}/services?q={search_term_string}`,
