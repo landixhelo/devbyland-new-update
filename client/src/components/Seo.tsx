@@ -74,7 +74,7 @@ export function Seo({
 
       <meta name="author" content={SITE.name} />
       <meta name="geo.region" content="AL-11" />
-      <meta name="geo.placename" content="Tiranë" />
+      <meta name="geo.placename" content="Tirana" />
       <meta
         name="geo.position"
         content={`${SITE.geo.lat};${SITE.geo.lng}`}

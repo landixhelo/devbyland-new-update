@@ -8,7 +8,7 @@ export function PrivacyPage() {
     <>
       <Seo
         title="Privacy Policy"
-        description="Politika e privatësisë së DevByLand — si mbledhim dhe mbrojmë të dhënat tuaja."
+        description="DevByLand privacy policy — how we collect, use and protect your personal data."
         path="/privacy"
       />
       <Navbar />
@@ -25,53 +25,52 @@ export function PrivacyPage() {
                 <h2>Privacy Policy</h2>
               </div>
               <div className="col-md-6">
-                <h3 style={{ float: "right" }}>Përditësimi i fundit: 29/10/2025</h3>
+                <h3 style={{ float: "right" }}>Last updated: 29/10/2026</h3>
               </div>
             </div>
             <p style={{ color: "white", fontSize: 18 }}>
-              * Kompania DEVBYLAND, respekton privatësinë e klientëve dhe
-              vizitorëve të faqes sonë. Kjo politikë shpjegon si mbledhim,
-              përdorim dhe mbrojmë informacionet personale.
+              * DEVBYLAND respects the privacy of clients and website visitors.
+              This policy explains how we collect, use and protect personal
+              information.
             </p>
             <p className="txt">
-              <b>1. Të dhënat që mbledhim</b>
+              <b>1. Data we collect</b>
             </p>
             <p>
-              Emër, email dhe numër telefoni (kur plotëson formularin e
-              kontaktit). Emrin e kompanisë ose biznesit. Të dhëna teknike (IP,
-              browser, pages visited – për analiza anonime).
+              Name, email and phone number (when you submit the contact form).
+              Company or business name. Technical data (IP, browser, pages
+              visited — for anonymous analytics).
             </p>
             <p className="txt">
-              <b>2. Si i përdorim të dhënat</b>
+              <b>2. How we use the data</b>
             </p>
             <p>
-              Përgjigje ndaj kërkesave ose ofertave, përmirësim të shërbimeve, dhe
-              njoftime (vetëm me pëlqimin tuaj).
+              To reply to enquiries or quotes, improve our services, and send
+              updates only with your consent.
             </p>
             <p className="txt">
-              <b>3. Mbrojtja e të dhënave</b>
+              <b>3. Data protection</b>
             </p>
             <p>
-              Përdorim metoda sigurie për të mbrojtur informacionet kundër
-              qasjes, ndryshimit ose shpërndarjes së paautorizuar.
+              We use security measures to protect information against
+              unauthorised access, alteration or disclosure.
             </p>
             <p className="txt">
-              <b>4. Ndarja me palë të treta</b>
+              <b>4. Sharing with third parties</b>
             </p>
             <p>
-              Nuk i ndajmë informacionet me askënd tjetër, përveç rasteve kur
-              është e nevojshme për përmbushjen e një kërkese ose zbatim të
-              ligjit.
+              We do not share your information with others, except when needed
+              to fulfil a request or comply with the law.
             </p>
             <p className="txt">
-              <b>5. Të drejtat tuaja</b>
+              <b>5. Your rights</b>
             </p>
             <p>
-              Mund të kërkoni kopje të të dhënave, fshirjen ose korrigjimin e
-              tyre, dhe ndërprerjen e komunikimit marketing.
+              You may request a copy of your data, correction or deletion, and
+              stop receiving marketing messages.
             </p>
             <p className="txt">
-              <b>6. Kontakt</b>
+              <b>6. Contact</b>
             </p>
             <p>
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>

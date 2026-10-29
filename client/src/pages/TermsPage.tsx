@@ -8,7 +8,7 @@ export function TermsPage() {
     <>
       <Seo
         title="Terms & Conditions"
-        description="Kushtet e përdorimit të faqes dhe shërbimeve DevByLand."
+        description="Terms of use for the DevByLand website and services."
         path="/terms"
       />
       <Navbar />
@@ -25,62 +25,64 @@ export function TermsPage() {
                 <h2>Terms & Conditions</h2>
               </div>
               <div className="col-md-6">
-                <h3 style={{ float: "right" }}>Përditësimi i fundit: 29/10/2025</h3>
+                <h3 style={{ float: "right" }}>Last updated: 29/10/2026</h3>
               </div>
             </div>
             <p style={{ color: "white", fontSize: 18 }}>
-              * Këto kushte (“Kushtet”) rregullojnë përdorimin e faqes DevByLand
-              dhe shërbimeve të ofruara nga <b>DEVBYLAND</b>.
+              * These terms (“Terms”) govern use of the DevByLand website and
+              services provided by <b>DEVBYLAND</b>.
             </p>
             <p className="txt">
-              <b>1. Pranimi i kushteve</b>
+              <b>1. Acceptance</b>
             </p>
             <p>
-              Duke përdorur faqen tonë ose duke kërkuar një shërbim, ju pranoni
-              këto kushte. Nëse nuk jeni dakord, ju lutemi mos përdorni faqen
-              tonë.
+              By using our website or requesting a service, you accept these
+              terms. If you do not agree, please do not use our site.
             </p>
             <p className="txt">
-              <b>2. Shërbimet tona</b>
+              <b>2. Our services</b>
             </p>
             <p>
-              Web Design & Development, SEO, Branding & Graphic Design — sipas
-              marrëveshjes me klientin.
+              Web design & development, e-commerce, UX/UI, SEO and related
+              digital services — as agreed with each client.
             </p>
             <p className="txt">
-              <b>3. Pagesat</b>
+              <b>3. Payments</b>
             </p>
             <p>
-              Pagesat kryhen sipas marrëveshjes për çdo projekt. Parapagimi (nëse
-              kërkohet) nuk është i rimbursueshëm pas fillimit të punës.
+              Payments follow the agreement for each project. Any deposit
+              required is non-refundable after work has started.
             </p>
             <p className="txt">
-              <b>4. Pronësia e përmbajtjes</b>
+              <b>4. Ownership</b>
             </p>
             <p>
-              Materialet e krijuara janë pronë e klientit vetëm pas pagesës së
-              plotë. Deri atëherë mbeten pronë e DEVBYLAND.
+              Deliverables become the client’s property after full payment.
+              Until then they remain the property of DEVBYLAND. After final
+              payment, code and assets are transferred to you.
             </p>
             <p className="txt">
-              <b>5. Ndryshime</b>
+              <b>5. Changes</b>
             </p>
             <p>
-              Mund të përditësojmë këto kushte. Versioni më i fundit publikohet
-              në këtë faqe.
+              We may update these terms. The latest version is published on this
+              page.
             </p>
             <p className="txt">
-              <b>6. Kufizimi i përgjegjësisë</b>
+              <b>6. Limitation of liability</b>
             </p>
             <p>
-              Nuk mbajmë përgjegjësi për dëme që mund të lindin nga përdorimi i
-              faqeve ose shërbimeve tona.
+              We are not liable for damages arising from use of our websites or
+              services, except where required by law.
             </p>
             <p className="txt">
-              <b>7. Ligji në fuqi</b>
+              <b>7. Governing law</b>
             </p>
-            <p>Këto kushte rregullohen sipas ligjeve të Republikës së Shqipërisë.</p>
+            <p>
+              These terms are governed by the laws of the Republic of Albania.
+            </p>
             <p className="txt">
-              <b>8. Kontakt</b>
+              <b>8. Contact</b>
             </p>
             <p>
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>

@@ -5,11 +5,11 @@ export function WhatsAppButton() {
     <a
       className="whatsapp-float"
       href={`${SITE.whatsappUrl}?text=${encodeURIComponent(
-        "Përshëndetje DevByLand! Dua të flasim për një projekt."
+        "Hi DevByLand! I’d like to talk about a project."
       )}`}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Na shkruaj në WhatsApp"
+      aria-label="Message us on WhatsApp"
     >
       <svg viewBox="0 0 24 24" aria-hidden="true" width="28" height="28">
         <path

@@ -23,7 +23,6 @@ export function JsonLd() {
         description: SITE.defaultDescription,
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Bulevardi Dëshmorët e Kombit",
           addressLocality: "Tirana",
           addressRegion: "Tirana",
           addressCountry: "AL",
@@ -58,7 +57,7 @@ export function JsonLd() {
         ],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: "Shërbimet DevByLand",
+          name: "DevByLand Services",
           itemListElement: SERVICES.map((service, index) => ({
             "@type": "Offer",
             position: index + 1,
