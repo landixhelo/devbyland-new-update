@@ -60,10 +60,12 @@ export function HomePage() {
       </header>
 
       <section className="trust-strip" aria-label="Tech stack">
-        <div className="container trust-strip__inner">
-          {TECH_STACK.map((tech) => (
-            <span key={tech.name}>{tech.name}</span>
-          ))}
+        <div className="trust-strip__track">
+          <div className="trust-strip__inner">
+            {[...TECH_STACK, ...TECH_STACK].map((tech, i) => (
+              <span key={`${tech.name}-${i}`}>{tech.name}</span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -117,20 +119,20 @@ export function HomePage() {
               A small studio, fully focused on your result
             </h2>
           </div>
-          <div className="stats-grid reveal">
-            <div className="stats-item">
+          <div className="stats-grid">
+            <div className="stats-item reveal reveal-scale">
               <strong>3+</strong>
               <p>live products in our portfolio</p>
             </div>
-            <div className="stats-item">
+            <div className="stats-item reveal reveal-scale reveal-delay-1">
               <strong>24h</strong>
               <p>reply time on every enquiry</p>
             </div>
-            <div className="stats-item">
+            <div className="stats-item reveal reveal-scale reveal-delay-2">
               <strong>1:1</strong>
               <p>direct contact with the developer</p>
             </div>
-            <div className="stats-item">
+            <div className="stats-item reveal reveal-scale reveal-delay-3">
               <strong>100%</strong>
               <p>code ownership transferred to you</p>
             </div>
@@ -217,28 +219,28 @@ export function HomePage() {
             <h2 className="section-title">Four steps, zero chaos</h2>
           </div>
           <div className="process-track">
-            <div className="process-step reveal">
+            <div className="process-step reveal reveal-left">
               <span className="process-step__num">01</span>
               <h3>Briefing</h3>
               <p>
                 We learn your goals, audience and what success looks like.
               </p>
             </div>
-            <div className="process-step reveal reveal-delay-1">
+            <div className="process-step reveal reveal-left reveal-delay-1">
               <span className="process-step__num">02</span>
               <h3>Design</h3>
               <p>
                 You see the structure and look before a single line of code.
               </p>
             </div>
-            <div className="process-step reveal reveal-delay-2">
+            <div className="process-step reveal reveal-right reveal-delay-2">
               <span className="process-step__num">03</span>
               <h3>Build</h3>
               <p>
                 Short sprints with regular demos on desktop and mobile.
               </p>
             </div>
-            <div className="process-step reveal reveal-delay-3">
+            <div className="process-step reveal reveal-right reveal-delay-3">
               <span className="process-step__num">04</span>
               <h3>Launch</h3>
               <p>
