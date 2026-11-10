@@ -5,6 +5,7 @@ import { CtaBand } from "../components/CtaBand";
 import { Seo } from "../components/Seo";
 import { useReveal } from "../hooks/useReveal";
 import { getService, SERVICES, SITE } from "../lib/site";
+import { CTA } from "../lib/content";
 
 export function ServiceDetailPage() {
   useReveal();
@@ -180,8 +181,9 @@ export function ServiceDetailPage() {
       </section>
 
       <CtaBand
-        title={`Let’s talk about ${service.shortName}`}
-        text="Tell us what you need — we’ll reply with next steps and a realistic estimate."
+        title={CTA.final.title}
+        text={CTA.final.text}
+        cta={CTA.final.cta}
       />
       <Footer showExtraLinks />
     </>

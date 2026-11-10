@@ -36,6 +36,12 @@ export function Footer({ showExtraLinks = false }: Props) {
               <li>
                 <Link to="/services/seo">SEO</Link>
               </li>
+              <li>
+                <Link to="/services/custom-systems">Custom systems</Link>
+              </li>
+              <li>
+                <Link to="/services/maintenance">Maintenance</Link>
+              </li>
             </ul>
           </div>
           <div>

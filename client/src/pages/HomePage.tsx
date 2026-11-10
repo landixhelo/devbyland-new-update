@@ -5,121 +5,17 @@ import { CtaBand } from "../components/CtaBand";
 import { Seo } from "../components/Seo";
 import { TECH_STACK } from "../components/TechStack";
 import { useReveal } from "../hooks/useReveal";
-import { SITE } from "../lib/site";
-
-const services = [
-  {
-    title: "Web development",
-    text: "Business websites and web apps built with React and Node. Fast, secure and easy to grow.",
-  },
-  {
-    title: "UX / UI design",
-    text: "Clear, modern interfaces designed around what your visitors need to do.",
-  },
-  {
-    title: "E-commerce",
-    text: "Online stores with catalog, checkout, admin panel and payments.",
-  },
-  {
-    title: "SEO and performance",
-    text: "Technical SEO, speed optimisation and analytics so customers can find you.",
-  },
-  {
-    title: "Custom systems",
-    text: "Booking, rental and admin systems tailored to how your business works.",
-  },
-  {
-    title: "Maintenance",
-    text: "Updates, fixes and improvements after launch, so nothing breaks quietly.",
-  },
-];
-
-const projects = [
-  {
-    slug: "stitch-bear",
-    className: "project-card--featured project-card--stitch",
-    img: "/img/projects/stitch-bear.png",
-    alt: "Stitch Bear e-commerce",
-    tag: "E-commerce",
-    title: "Stitch Bear",
-    problem: "a handmade brand selling only through social media.",
-    built: "online store with catalog, checkout and admin.",
-    meta: ["React", "Node"],
-    delay: "",
-  },
-  {
-    slug: "tavolina",
-    className: "project-card--tavolina",
-    img: "/img/projects/tavolina.png",
-    alt: "Tavolina hospitality",
-    tag: "Hospitality",
-    title: "Tavolina",
-    problem: "paper menus and manual order handling.",
-    built: "digital menu, ordering and POS for bars and restaurants.",
-    meta: ["POS", "Full-stack"],
-    delay: " reveal-delay-1",
-  },
-  {
-    slug: "rental-car",
-    className: "project-card--autorent",
-    img: "/img/projects/autorent.png",
-    alt: "AutoRent rental platform",
-    tag: "Rental",
-    title: "AutoRent",
-    problem: "bookings handled by phone and spreadsheets.",
-    built: "rental platform with online booking and admin panel.",
-    meta: ["React", "PostgreSQL"],
-    delay: " reveal-delay-2",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Clear communication and a website that finally matches how we want to present the business.",
-    name: "Client",
-    role: "Tavolina",
-  },
-  {
-    quote:
-      "We needed online bookings that work on mobile. The platform is fast, simple and easy to manage.",
-    name: "Client",
-    role: "AutoRent",
-  },
-  {
-    quote:
-      "From idea to live store, everything was built around selling — not just looking good.",
-    name: "Client",
-    role: "Stitch Bear",
-  },
-];
-
-const faqs = [
-  {
-    q: "How long does a project take?",
-    a: "A website takes 2–4 weeks, a custom platform 6–12 weeks, depending on features.",
-  },
-  {
-    q: "Do you work with clients outside Albania?",
-    a: "Yes. We work remotely in English, on CET hours, with clients across Europe and beyond.",
-  },
-  {
-    q: "Does the price include hosting and domain?",
-    a: "We can set up and manage both for you. Costs are listed clearly in your quote.",
-  },
-  {
-    q: "Who owns the code?",
-    a: "You do. All code and assets are transferred to you after final payment.",
-  },
-  {
-    q: "Do you offer support after launch?",
-    a: "Yes. Monthly maintenance plans cover updates, fixes and small improvements.",
-  },
-  {
-    q: "Can you sign an NDA?",
-    a: "Of course. We are happy to sign one before discussing your project.",
-  },
-];
+import { SITE, SERVICES } from "../lib/site";
+import {
+  CTA,
+  FAQS,
+  HOME_INTRO,
+  PACKAGES,
+  PROJECTS,
+  PROJECTS_SECTION,
+  SERVICES_SECTION,
+  TESTIMONIALS,
+} from "../lib/content";
 
 export function HomePage() {
   useReveal();
@@ -127,7 +23,7 @@ export function HomePage() {
   const homeFaqLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((f) => ({
+    mainEntity: FAQS.map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -146,18 +42,12 @@ export function HomePage() {
 
       <header className="hero">
         <div className="container">
-          <p className="hero-eyebrow">
-            Web development studio · Tirana, Albania · CET
-          </p>
+          <p className="hero-eyebrow">{HOME_INTRO.eyebrow}</p>
           <h1 className="hero-brand">
             We build fast websites and web apps that bring you{" "}
             <span>customers</span>.
           </h1>
-          <p className="hero-lead">
-            Websites, e-commerce and booking systems for hospitality, rental and
-            retail businesses. Built with React and Node.js, optimised for
-            search, delivered on time.
-          </p>
+          <p className="hero-lead">{HOME_INTRO.lead}</p>
           <div className="hero-actions">
             <Link className="btn-brand" to="/contact">
               Get a free quote
@@ -180,27 +70,23 @@ export function HomePage() {
       <section className="section" id="services">
         <div className="container">
           <div className="section-head reveal">
-            <p className="section-label">What we do</p>
-            <h2 className="section-title">
-              Everything you need to look serious online
-            </h2>
-            <p className="section-text">
-              From first idea to launch: design, development and search
-              optimisation in one place.
-            </p>
+            <p className="section-label">{SERVICES_SECTION.label}</p>
+            <h2 className="section-title">{SERVICES_SECTION.title}</h2>
+            <p className="section-text">{SERVICES_SECTION.text}</p>
           </div>
           <div className="service-cards">
-            {services.map((item, i) => (
-              <article
+            {SERVICES.map((item, i) => (
+              <Link
                 className={`service-card reveal${i ? ` reveal-delay-${Math.min(i, 3)}` : ""}`}
-                key={item.title}
+                to={`/services/${item.slug}`}
+                key={item.slug}
               >
                 <span className="service-card__num">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
+                <h3>{item.name}</h3>
+                <p>{item.intro}</p>
+              </Link>
             ))}
           </div>
           <div className="section-actions reveal">
@@ -214,13 +100,11 @@ export function HomePage() {
       <section className="mid-cta">
         <div className="container mid-cta__inner reveal">
           <div>
-            <h2>Need a website that works for your business?</h2>
-            <p>
-              Tell us about your project and get a clear quote within 24 hours.
-            </p>
+            <h2>{CTA.mid.title}</h2>
+            <p>{CTA.mid.text}</p>
           </div>
           <Link className="btn-brand" to="/contact">
-            Get a free quote
+            {CTA.mid.cta}
           </Link>
         </div>
       </section>
@@ -258,8 +142,8 @@ export function HomePage() {
         <div className="container">
           <div className="section-head row-between reveal">
             <div>
-              <p className="section-label">Selected work</p>
-              <h2 className="section-title">Real projects, real businesses</h2>
+              <p className="section-label">{PROJECTS_SECTION.label}</p>
+              <h2 className="section-title">{PROJECTS_SECTION.title}</h2>
             </div>
             <Link className="link-arrow" to="/projects">
               All projects →
@@ -267,7 +151,7 @@ export function HomePage() {
           </div>
 
           <div className="project-grid">
-            {projects.map((p) => (
+            {PROJECTS.map((p) => (
               <Link
                 key={p.slug}
                 className={`project-card ${p.className} reveal${p.delay}`}
@@ -307,7 +191,7 @@ export function HomePage() {
             <h2 className="section-title">What clients say</h2>
           </div>
           <div className="testimonial-grid">
-            {testimonials.map((item, i) => (
+            {TESTIMONIALS.map((item, i) => (
               <blockquote
                 className={`testimonial-card reveal${i ? ` reveal-delay-${Math.min(i, 3)}` : ""}`}
                 key={item.role}
@@ -382,55 +266,24 @@ export function HomePage() {
             </Link>
           </div>
           <div className="package-grid">
-            <div className="package-tier reveal">
-              <p className="package-tier__name">Starter website</p>
-              <h3>From €150</h3>
-              <p className="package-tier__desc">
-                Ideal for businesses that need a professional online presence
-                quickly.
-              </p>
-              <ul>
-                <li>Up to 5 pages</li>
-                <li>Responsive design</li>
-                <li>Contact form</li>
-                <li>Basic SEO</li>
-              </ul>
-              <Link className="btn-brand" to="/contact">
-                Get a quote
-              </Link>
-            </div>
-            <div className="package-tier package-tier--featured reveal reveal-delay-1">
-              <p className="package-tier__name">Web + features</p>
-              <h3>From €350</h3>
-              <p className="package-tier__desc">
-                For brands that need more than a static brochure site.
-              </p>
-              <ul>
-                <li>Up to 10 pages</li>
-                <li>Custom UI design</li>
-                <li>Integrations (maps, payments, email)</li>
-                <li>Performance optimisation</li>
-              </ul>
-              <Link className="btn-brand" to="/contact">
-                Get a quote
-              </Link>
-            </div>
-            <div className="package-tier reveal reveal-delay-2">
-              <p className="package-tier__name">Full platform</p>
-              <h3>From €550</h3>
-              <p className="package-tier__desc">
-                E-commerce, rental, booking or a dedicated system.
-              </p>
-              <ul>
-                <li>E-commerce, rental or booking</li>
-                <li>Admin panel and database</li>
-                <li>User accounts and auth</li>
-                <li>Deployment and maintenance</li>
-              </ul>
-              <Link className="btn-brand" to="/contact">
-                Get a quote
-              </Link>
-            </div>
+            {PACKAGES.map((pkg, i) => (
+              <div
+                className={`package-tier${pkg.featured ? " package-tier--featured" : ""} reveal${i ? ` reveal-delay-${Math.min(i, 3)}` : ""}`}
+                key={pkg.name}
+              >
+                <p className="package-tier__name">{pkg.name}</p>
+                <h3>{pkg.price}</h3>
+                <p className="package-tier__desc">{pkg.desc}</p>
+                <ul>
+                  {pkg.features.map((f) => (
+                    <li key={f}>{f}</li>
+                  ))}
+                </ul>
+                <Link className="btn-brand" to="/contact">
+                  Get a quote
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -442,7 +295,7 @@ export function HomePage() {
             <h2 className="section-title">Questions we hear often</h2>
           </div>
           <div className="faq-list reveal">
-            {faqs.map((f) => (
+            {FAQS.map((f) => (
               <details className="faq-item" key={f.q}>
                 <summary>{f.q}</summary>
                 <p>{f.a}</p>
@@ -452,11 +305,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <CtaBand
-        title="Got an idea? Let’s build it together."
-        text="Tell us about your business and we’ll propose the right solution within 24 hours."
-        cta="Book a free call"
-      />
+      <CtaBand title={CTA.final.title} text={CTA.final.text} cta={CTA.final.cta} />
       <Footer showExtraLinks />
     </>
   );

@@ -5,6 +5,7 @@ import { CtaBand } from "../components/CtaBand";
 import { Seo } from "../components/Seo";
 import { useReveal } from "../hooks/useReveal";
 import { SERVICES, SITE } from "../lib/site";
+import { CTA, PACKAGES, SERVICES_SECTION } from "../lib/content";
 
 export function ServicesPage() {
   useReveal();
@@ -13,13 +14,13 @@ export function ServicesPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "DevByLand Services",
-    description:
-      "Web development, e-commerce, UX/UI and SEO for businesses in Tirana and abroad.",
+    description: SERVICES_SECTION.text,
     url: `${SITE.url}/services`,
     isPartOf: { "@id": `${SITE.url}/#website` },
     about: SERVICES.map((s) => ({
       "@type": "Service",
       name: s.name,
+      description: s.intro,
       url: `${SITE.url}/services/${s.slug}`,
     })),
   };
@@ -28,7 +29,7 @@ export function ServicesPage() {
     <>
       <Seo
         title="Services | Websites, E-commerce, UX/UI & SEO"
-        description="What we do: web development, e-commerce, UX/UI design and SEO — from first idea to launch."
+        description={`${SERVICES_SECTION.title}. ${SERVICES_SECTION.text}`}
         path="/services"
         keywords={`${SITE.keywords}, web agency Albania`}
         jsonLd={jsonLd}
@@ -36,12 +37,9 @@ export function ServicesPage() {
       <Navbar />
       <header className="page-hero">
         <div className="container">
-          <p className="section-label">Services</p>
-          <h1>Everything you need to look serious online</h1>
-          <p>
-            From first idea to launch: design, development and search
-            optimisation in one place.
-          </p>
+          <p className="section-label">{SERVICES_SECTION.label}</p>
+          <h1>{SERVICES_SECTION.title}</h1>
+          <p>{SERVICES_SECTION.text}</p>
         </div>
       </header>
 
@@ -81,10 +79,41 @@ export function ServicesPage() {
         </div>
       </section>
 
-      <CtaBand
-        title="Need a website that works for your business?"
-        text="Tell us about your project and get a clear quote within 24 hours."
-      />
+      <section className="section section--paper-deep" id="packages">
+        <div className="container">
+          <div className="section-head reveal">
+            <p className="section-label">Pricing</p>
+            <h2 className="section-title">
+              Pick the plan that fits your business
+            </h2>
+            <p className="section-text">
+              Fixed-price quotes. Prices in euro, no hidden costs.
+            </p>
+          </div>
+          <div className="package-grid">
+            {PACKAGES.map((pkg, i) => (
+              <div
+                className={`package-tier${pkg.featured ? " package-tier--featured" : ""} reveal${i ? ` reveal-delay-${Math.min(i, 3)}` : ""}`}
+                key={pkg.name}
+              >
+                <p className="package-tier__name">{pkg.name}</p>
+                <h3>{pkg.price}</h3>
+                <p className="package-tier__desc">{pkg.desc}</p>
+                <ul>
+                  {pkg.features.map((f) => (
+                    <li key={f}>{f}</li>
+                  ))}
+                </ul>
+                <Link className="btn-brand" to="/contact">
+                  Get a quote
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CtaBand title={CTA.mid.title} text={CTA.mid.text} cta={CTA.mid.cta} />
       <Footer showExtraLinks />
     </>
   );

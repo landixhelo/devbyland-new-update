@@ -86,10 +86,11 @@ export function ContactPage() {
       <header className="page-hero">
         <div className="container">
           <p className="section-label">Contact</p>
-          <h1>Let’s talk</h1>
+          <h1>Get a free quote</h1>
           <p>
-            Tell us about your idea or business — we’ll reply with clear next
-            steps within 24 hours.
+            Tell us about your project and get a clear quote within 24 hours.
+            Starter from €150 · Web + features from €350 · Full platform from
+            €550.
           </p>
         </div>
       </header>
@@ -212,10 +213,12 @@ export function ContactPage() {
                           name="service"
                           defaultValue="Web Development"
                         >
-                          <option value="Web Development">Web Development</option>
+                          <option value="Web Development">Web development</option>
+                          <option value="UX/UI Design">UX / UI design</option>
                           <option value="E-commerce">E-commerce</option>
-                          <option value="UX/UI Design">UX/UI Design</option>
-                          <option value="SEO">SEO</option>
+                          <option value="SEO">SEO and performance</option>
+                          <option value="Custom systems">Custom systems</option>
+                          <option value="Maintenance">Maintenance</option>
                           <option value="Other">Other</option>
                         </select>
                       </div>
