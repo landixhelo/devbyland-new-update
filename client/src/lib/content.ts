@@ -55,7 +55,7 @@ export const PROJECTS = [
     built: "rental platform with online booking and admin panel.",
     meta: ["React", "PostgreSQL"],
     delay: " reveal-delay-2",
-    liveUrl: "https://www.landixhelo.me",
+    liveUrl: "https://www.rentalcaral.com/",
   },
 ] as const;
 
