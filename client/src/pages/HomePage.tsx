@@ -384,7 +384,7 @@ export function HomePage() {
           <div className="package-grid">
             <div className="package-tier reveal">
               <p className="package-tier__name">Starter website</p>
-              <h3>From quote</h3>
+              <h3>From €150</h3>
               <p className="package-tier__desc">
                 Ideal for businesses that need a professional online presence
                 quickly.
@@ -401,7 +401,7 @@ export function HomePage() {
             </div>
             <div className="package-tier package-tier--featured reveal reveal-delay-1">
               <p className="package-tier__name">Web + features</p>
-              <h3>From quote</h3>
+              <h3>From €350</h3>
               <p className="package-tier__desc">
                 For brands that need more than a static brochure site.
               </p>
@@ -417,7 +417,7 @@ export function HomePage() {
             </div>
             <div className="package-tier reveal reveal-delay-2">
               <p className="package-tier__name">Full platform</p>
-              <h3>From quote</h3>
+              <h3>From €550</h3>
               <p className="package-tier__desc">
                 E-commerce, rental, booking or a dedicated system.
               </p>
